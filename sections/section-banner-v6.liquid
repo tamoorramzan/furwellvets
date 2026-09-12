@@ -1,0 +1,145 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v6" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-banner-v6 mt-all">
+    <div class="container container-v1">
+    <div class="row justify-content-around  align-items-center">
+      <div class="col-lg-4 col-md-5">
+        <div class="box_img">
+          <div class="picture">
+            <a href="{{section.settings.button_url}}">
+              {% if section.settings.image-banner1 != blank %}
+              <img src="{{section.settings.image-banner1|img_url:'master'}}" class="img-fluid" alt="banner">
+              {% else %}
+              <a href="{{section.settings.button_url}}"><img src="//placehold.it/560x600" class="img-fluid" alt=""></a>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="box_img relative">
+          <div class="picture">
+            <a href="{{section.settings.button_url}}">
+              {% if section.settings.image-banner2 != blank %}
+              <img src="{{section.settings.image-banner2|img_url:'master'}}" class="img-fluid" alt="banner">
+              {% else %}
+              <a href="{{section.settings.button_url}}"><img src="//placehold.it/850x700" class="img-fluid" alt=""></a>
+              {% endif %}
+            </a>
+          </div>
+          {% if section.settings.section_title_vertical != blank %}          
+          <span class="title_title_vertical">{{section.settings.section_title_vertical}}</span>
+          {% endif %}
+          <div class="banner text-center">
+
+            {% if section.settings.section_title_big != blank %}          
+            <h3 class="title_heading">{{section.settings.section_title_big}}</h3>
+            {% endif %}
+
+            {% if section.settings.section_title != blank %}          
+            <p class="mb-0">{{section.settings.section_title}}</p>
+            {% endif %}
+            <div class="link">
+              {% if section.settings.button_1_name != blank %}
+              <a href="{{ section.settings.button_url }}" class="button-banner">{{section.settings.button_1_name}}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner v6",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Image left"
+    },
+	{
+      "type": "image_picker",
+      "id": "image-banner1",
+      "label": "Image Left",
+	  "info": "560 x 600px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Info center"
+    },
+	{
+      "type": "text",
+      "id": "section_title_vertical",
+      "label": "Sub Title Vertical",
+      "default": "SALE 20%"
+    },
+	{
+      "type": "text",
+      "id": "section_title_big",
+      "label": "Sub Title Banner",
+      "default": "Collection Fashion"
+    },
+	{
+      "type": "text",
+      "id": "section_title",
+      "label": "Sub Title Banner",
+      "default": "JUST FOR YOU"
+    },
+	{
+      "type": "text",
+      "id": "button_1_name",
+      "label": "Button name",
+      "default": "MEN COLLECTION"
+    },
+	{
+      "type": "url",
+      "id": "button_url",
+      "label": "URL Button",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Image Right"
+    },
+	{
+      "type": "image_picker",
+      "id": "image-banner2",
+      "label": "Image Right",
+	  "info": "850 x 700px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner v6",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

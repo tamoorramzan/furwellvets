@@ -1,0 +1,190 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-slideshow-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-slideshow-v2">
+      <div class="js-slideshowv2">       
+        {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+        {% if block.type == "slideshow" %}
+        <div class="itemv-slide-h3">
+          <div class="info-sideh3">
+            <div class="picture-slideshow">
+              {% if block.settings.block_banerimage != blank %}
+              <img src="{{block.settings.block_banerimage | img_url: 'master'}}" class="img-fluid img_slideh1" alt="">
+              {% else %}
+              <img src="//placehold.it/1920x980" class="img-fluid img_slideh1" alt="slideshow">
+              {% endif %}
+            </div>
+         
+            <div class="box-content">             
+              
+              {% if block.settings.block_title_top != blank %}
+              <div class="box-title">                
+                <h3 class="titlebig mb-0" style="color:{{block.settings.color_block_title_top}};">{{ block.settings.block_title_top }}</h3>                
+              </div>              
+              {% endif %}
+              
+              <div class="subtitle-1">
+                {% if block.settings.block_subtitle != blank %}
+                <p class="mb-0" style="color:{{block.settings.color_subtitle}};">{{block.settings.block_subtitle}}</p>
+                {% endif %}
+              </div>
+
+              {% if block.settings.block_buton != blank %}
+              <div class="box-button">
+                <a class="button-shop button-shop-{{section.id}}-{{block.id}}" href="{{block.settings.block_url}}" style="color:{{block.settings.color_block_button}}; background-color:{{block.settings.color_bg_block_button}}">
+                  {{ block.settings.block_buton }}
+                </a>
+              </div>
+              {% endif %}              
+            </div>
+
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        
+      </div>
+  </div>
+</div>
+<style>
+  {% for block in section.blocks %}
+  {% if block.type == 'slideshow' %}
+	.section-slideshow-v2 .slick-active .info-sideh3 .box-content .button-shop-{{section.id}}-{{block.id}}:hover{
+    	background-color: {{block.settings.color_bg_block_button_hover}} !important;
+    }
+
+  {% endif %}
+  {% endfor %}
+</style>
+{% schema %}
+{
+  "name": "Slideshow v2",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slideshow",
+      "name": "slideshow",
+      "settings": [
+		{
+          "type": "image_picker",
+          "id": "block_banerimage",
+          "label": "Image slideshow",
+          "info": "1920 x 980px recommended"
+        },
+		
+        {
+          "type": "text",
+          "id": "block_title_top",
+          "label": "Title big sideshow ",
+          "default": "The Bottle Grinder"
+        },
+		{
+           "type": "color",
+           "id": "color_block_title_top",
+           "label": "Color Title sideshow top",
+           "default": "#000"
+        },
+		{
+          "type": "text",
+          "id": "block_subtitle",
+          "label": "Sub Title sideshow",
+          "default": "Fusce egestas elit eget lorem"
+        },
+		{
+           "type": "color",
+           "id": "color_subtitle",
+           "label": "Color Sub Title sideshow",
+           "default": "#000"
+        },
+        {
+          "type": "text",
+          "id": "block_buton",
+          "label": "Button slideshow",
+          "default": "Shop now"
+        },
+		{
+           "type": "color",
+           "id": "color_block_button",
+           "label": "Color button",
+           "default": "#fff"
+        },
+		{
+           "type": "color",
+           "id": "color_bg_block_button",
+           "label": "Color background button",
+           "default": "#000"
+        },
+		{
+           "type": "color",
+           "id": "color_bg_block_button_hover",
+           "label": "Color background button hover",
+           "default": "#2dbbf0"
+        },
+        {
+          "type": "url",
+          "id": "block_url",
+          "label": "URL button slideshow",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slideshow v2",
+      "category": "HOME PAGE",
+	  "blocks": [
+        {
+          "type": "slideshow",
+          "settings": {            
+			"block_title_top": "The Bottle Grinder",
+			"block_subtitle": "Fusce egestas elit eget lorem",
+			"block_buton": "Shop now"
+          }
+        },
+		 {
+          "type": "slideshow",
+          "settings": {            
+			"block_title_top": "Smarthome Collection",
+			"block_subtitle": "Fusce egestas elit eget lorem",
+			"block_buton": "Shop now"
+          }
+        },
+		 {
+          "type": "slideshow",
+          "settings": {            
+			"block_title_top": "Lifestyle Collection",
+			"block_subtitle": "Fusce egestas elit eget lorem",
+			"block_buton": "Shop now"
+          }
+        }		
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

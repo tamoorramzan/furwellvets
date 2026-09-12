@@ -1,0 +1,190 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-intagram-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-intagram-v1 mt-all">
+    
+    {% assign instafeed_img = '{{image}}' %}
+    {% assign instafeed_link = '{{link}}' %}
+
+    {% if section.settings.ins_userid != blank and section.settings.ins_access_token != blank %}
+    <script>
+      jQuery(document).ready(function($) {
+        var feed = new Instafeed({
+          get: 'user',
+          userId: '{{section.settings.ins_userid}}',
+          accessToken: '{{section.settings.ins_access_token}}',
+          template: '<div class="box-img"> <div class="picture"> <a href="{{instafeed_link}}"> <img src="{{instafeed_img}}" class="img-fluid w-100" alt="instagram"> </a> </div> <div class="content-intagram text-center"> <a href="{{instafeed_link}}" class="ti-instagram"></a> <h4 class="mb-0">{{section.settings.section_title_item}}</h4> </div> </div>',
+          target: 'engoj_instagramv1',
+          resolution: 'standard_resolution',
+          limit: '{{section.settings.ins_limit_number}}'
+        });
+        feed.run();
+      });
+    </script>
+    {% endif %}
+    
+      <div class="box-intargram">
+        <div class="text-center box-sextion-top" >
+          {% if section.settings.img_icon != blank %}
+          <div>
+          	<img class="mb-3" src="{{section.settings.img_icon |img_url : 'master'}}">
+          </div>
+          {% endif %}
+          {% if section.settings.section_title_big != blank %}
+          <h3 class="title_heading text-center mb-0">{{section.settings.section_title_big}}</h3>
+          {% endif %}
+        </div>       
+
+        <div class="">
+          <div class=" justify-content-center" id="engoj_instagramv1">
+
+            {% if section.settings.ins_userid == blank or section.settings.ins_access_token == blank %}
+            {% if shop.permanent_domain == "petiza-store-demo.myshopify.com" %}
+            {% for i in (1..section.settings.ins_limit_number) %}
+
+              <div class="box-img">
+                <div class="picture text-center">
+                  <a href="https://www.instagram.com/">
+                    <img class="w-100 lazyload" data-src="{{ 'instagram' | append: i | append: '.jpg' | file_img_url: 'master' }}" alt="instagram" />
+                  </a>
+                </div>
+                <div class="content-intagram text-center">
+                  <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                  {% if section.settings.section_title_item != blank %}
+                  <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                  {% endif %}
+                </div>
+              </div>
+
+            {% endfor %}
+            {% else %}
+            <div class="col-lg-3 px-0 col-12 col-sm-6 col-md-3 ">
+              <div class="box-img">
+                <div class="picture">
+                  <a href="https://www.instagram.com/">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </a>
+                </div>
+                <div class="content-intagram text-center">
+                  <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                  {% if section.settings.section_title_item != blank %}
+                  <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<style>
+  @media(min-width : 1200px){
+  .section-intagram-v1 .box-img{
+    {% if section.settings.ins_limit_number == '5' %} width : 20%; {% elsif section.settings.ins_limit_number == '6' %} width : 16.66%;{% else %} width : 12.5%; {% endif %}
+  }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "INSTAGRAM v1",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+	{
+      "type": "header",
+      "content": "Setting Intagram"
+    },
+    {
+    "type": "image_picker",
+    "id": "img_icon",
+    "label": "Icon Image",
+    "info": "70 x 70px recommended"
+    },
+	{
+      "type": "text",
+      "id": "section_title_big",
+      "label": "Title Section",
+      "default": "instagram.shop"
+    },
+
+    
+	{
+      "type": "header",
+      "content": "List Image Intagram"
+    },
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+	
+    {
+      "type": "select",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+	  "options": [
+      {
+        "value": "5",
+        "label": "5"
+      },
+      {
+        "value": "6",
+        "label": "6"
+      },
+	  {
+        "value": "8",
+        "label": "8"
+      }
+	]
+    },
+	{
+      "type": "text",
+      "id": "section_title_item",
+      "label": "Title Item",
+      "default": "Shop it"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "INSTAGRAM v1",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

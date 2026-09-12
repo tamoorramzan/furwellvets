@@ -1,0 +1,184 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v1 mt-all">
+    <div class="container container-v1">
+      <div class="row">        
+        <div class="col-lg-6 col-md-6 col-12 col-sm-12 mb-3 mb-md-0">
+          <div class="box-info">
+            <div class="box-img-one box-img">
+              {% if section.settings.img_banner1 != blank %}
+              <a href="{{section.settings.url_button1}}"><img data-src="{{section.settings.img_banner1 | img_url:'master'}}" class="lazyload img-fluid w-100"></a>
+              {% else %}
+                <a href="{{section.settings.url_button1}}"><img src="//placehold.it/850x500" class="img-fluid w-100" alt=""></a>
+              {% endif %}
+            </div>
+            
+            <div class="content-banner">
+              {% if section.settings.title_1 != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title1}}">{{section.settings.title_1}}</h3>
+              {% endif %}
+
+              <div class="list-inline info-bottom"> 
+                {% if section.settings.button_1 != blank %}
+                <a href="{{section.settings.url_button1}}" class="button-shop one list-inline-item mr-0" style="color : {{section.settings.color_button1}}" >{{section.settings.button_1}}</a>
+                {% endif %}
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-12 col-sm-12">
+          <div class="box-info">
+            <div class="box-img-one box-img">
+              {% if section.settings.img_banner2 != blank %}
+              <a href="{{section.settings.url_button2}}"><img data-src="{{section.settings.img_banner2 | img_url:'master'}}" class="lazyload img-fluid w-100"></a>
+              {% else %}
+                <a href="{{section.settings.url_button2}}"><img src="//placehold.it/850x500" class="img-fluid w-100" alt=""></a>
+              {% endif %}
+            </div>
+            
+            <div class="content-banner content-banner2">
+              {% if section.settings.title_2 != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title2}}">{{section.settings.title_2}}</h3>
+              {% endif %}
+
+              <div class="list-inline info-bottom"> 
+                {% if section.settings.button_2 != blank %}
+                <a href="{{section.settings.url_button2}}" class="button-shop two list-inline-item mr-0" style="color : {{section.settings.color_button2}}">{{section.settings.button_2}}</a>
+                {% endif %}
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v1 .box-info .content-banner .info-bottom a:after{
+    background-color:{{section.settings.color_title1}};
+  }
+  .section-banner-v1 .box-info .content-banner.content-banner2 .info-bottom a:after{
+    background-color:{{section.settings.color_title2}};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Banner v1",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+  	{
+      "type": "header",
+      "content": "Settings Banner 1"
+    },
+	
+	{
+      "type": "text",
+      "id": "title_1",
+      "label": "Title Banner 1",
+      "default": "new<br>collection"
+    },
+	{
+      "type": "color",
+      "id": "color_title1",
+      "label": "Color title"
+    },
+  	{
+      "type": "text",
+      "id": "button_1",
+      "label": "Button Banner 1",
+      "default": "Shop now"
+    },
+	{
+      "type": "color",
+      "id": "color_button1",
+      "label": "Color Button"
+    },
+  	{
+      "type": "url",
+      "id": "url_button1",
+      "label": "URL Button ",
+      "default": "/collections/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner1",
+      "label": "Image",
+	  "info": "850 x 500px recommended"
+    },
+	{
+      "type": "header",
+      "content": "Setting Banner 2"
+    },
+	
+	{
+      "type": "text",
+      "id": "title_2",
+      "label": "Title Banner 2",
+      "default": "colors<br>and patterns"
+    },
+	{
+      "type": "color",
+      "id": "color_title2",
+      "label": "Color title"
+    },
+  	{
+      "type": "text",
+      "id": "button_2",
+      "label": "Button Banner 2",
+      "default": "Shop now"
+    },
+
+  	{
+      "type": "url",
+      "id": "url_button2",
+      "label": "URL Button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "color",
+      "id": "color_button2",
+      "label": "Color Button"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image",
+	  "info": "850 x 500px recommended"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Banner v1",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

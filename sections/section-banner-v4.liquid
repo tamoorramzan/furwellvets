@@ -1,0 +1,203 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v4" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v4 mt-all">
+    <div class="container container-v1">
+      <div class="row">        
+        <div class="col-lg-6 col-md-6 col-12 col-sm-12">
+          <div class="banner-box">
+            <div class="box-img">
+              <a href="{{section.settings.url_button1}}">
+                {% if section.settings.img_banner1 != blank %}
+                <img src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/850x510" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>            
+            <div class="banner-info">
+              {% if section.settings.title_1 != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title1}}">{{section.settings.title_1}}</h3>
+              {% endif %}
+              
+              {% if section.settings.sub-title-1 != blank %}
+              <p class="sub-title" style="color : {{section.settings.color_subtitle1}}">{{section.settings.sub-title-1}}</p>
+              {% endif %}
+
+              {% if section.settings.button_1 != blank %}
+              <a href="{{section.settings.url_button1}}" style="color : {{section.settings.color_button1}}" class="button-shop">{{section.settings.button_1}}</a>
+              {% endif %}
+              
+            </div>            
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-6 col-md-6 col-12 col-sm-12 mt-4 mt-sm-0">
+          <div class="banner-box">
+            <div class="box-img">
+              <a href="{{section.settings.url_button2}}">
+                {% if section.settings.img_banner2 != blank %}
+                <img src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid">
+                {% else %}
+                <img src="//placehold.it/850x510" class="img-fluid" alt="">
+                {% endif %}
+              </a>
+            </div>            
+            <div class="banner-info">
+              {% if section.settings.title_2 != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title2}}">{{section.settings.title_2}}</h3>
+              {% endif %}
+              
+              {% if section.settings.sub-title-2 != blank %}
+              <p class="sub-title" style="color : {{section.settings.color_subtitle2}}">{{section.settings.sub-title-2}}</p>
+              {% endif %}
+
+              {% if section.settings.button_2 != blank %}
+              <a href="{{section.settings.url_button2}}" style="color : {{section.settings.color_button1}}" class="button-shop">{{section.settings.button_2}}</a>
+              {% endif %}
+              
+            </div>            
+          </div>
+        </div>
+   
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v4 .banner-box .banner-info .button-shop:before{
+  	border-bottom: 2px solid {{section.settings.color_button1}};
+  }
+</style>
+{% schema %}
+{
+  "name": "Banner v4",
+  "settings": [
+  	{
+      "type": "header",
+      "content": "setting banner 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner1",
+      "label": "Image",
+	  "info": "720 x 510px recommended"
+    },
+	{
+      "type": "text",
+      "id": "title_1",
+      "label": "Title banner 1",
+      "default": "Spring Collection"
+    },
+    {
+      "type": "color",
+      "id": "color_title1",
+      "label": "Color title"
+    },
+    {
+      "type": "text",
+      "id": "sub-title-1",
+      "label": "Sub Title banner 1",
+      "default": "Daily Essentials"
+    },
+	{
+      "type": "color",
+      "id": "color_subtitle1",
+      "label": "Color Sub title"
+    },
+  	{
+      "type": "text",
+      "id": "button_1",
+      "label": "button 1",
+      "default": "Explore all"
+    },
+	{
+      "type": "color",
+      "id": "color_button1",
+      "label": "Color Button all"
+    },
+  	{
+      "type": "url",
+      "id": "url_button1",
+      "label": "URL button 1",
+      "default": "/collections/all"
+    },
+
+	{
+      "type": "header",
+      "content": "setting banner 2"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image",
+	  "info": "720 x 510px recommended"
+    },
+	{
+      "type": "text",
+      "id": "title_2",
+      "label": "Title banner 2",
+      "default": "Spring Collection"
+    },
+	{
+      "type": "color",
+      "id": "color_title2",
+      "label": "Color title"
+    },
+    {
+      "type": "text",
+      "id": "sub-title-2",
+      "label": "Sub Title banner 2",
+      "default": "Daily Essentials"
+    },
+	{
+      "type": "color",
+      "id": "color_subtitle2",
+      "label": "Color Sub title"
+    },
+  	{
+      "type": "text",
+      "id": "button_2",
+      "label": "button 2",
+      "default": "Explore all"
+    },
+  	{
+      "type": "url",
+      "id": "url_button2",
+      "label": "URL button 2",
+      "default": "/collections/all"
+    },
+		
+
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner v4",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

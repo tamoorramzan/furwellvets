@@ -1,0 +1,105 @@
+<div class="horizon-menu-home js-horizon-menu" style="{% if settings.bg_img_header_v5 != blank %}background-image:  url({{settings.bg_img_header_v5 |img_url : 'master'}}); background-size: cover; {% endif %}">      
+  <span class="close-menu-horizon js_close-menu-horizon"><span class="ti-close"></span></span>      
+  <div class="scroll-wrapper main-navigation scrollbar-macosx">
+    {% assign i = 1 %}
+
+    {% assign main_menu = section.settings.main_menu_store %}
+    {% for link in linklists[main_menu].links %}    
+    {% assign item = link.title | downcase %}
+    {% assign child_list_handle = link.title | handleize %}
+    
+    {% if linklists[child_list_handle].links != blank %}
+        
+    <div class="menu-horizon-list">
+      {% if link.title contains '[' %}
+      {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
+      {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
+      
+      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="relative nammenu ">{{link.title | split: '[' | first }}
+        <span class="absolute label_menu label_menu-{{link.title | handleize}}-{{forloop.index}}" {% if link.title contains '(' %}style="background-color: {{link.title | split: '(' | last  | split: ')' | first}};"{% endif %}><span>{{link.title | split: '[' | last  | split: ']' | first}}</span></span>
+        <style>
+          .label_menu-{{link.title | handleize}}-{{forloop.index}}:before {
+            border-top: 4px solid {{link.title | split: '(' | last  | split: ')' | first}};
+          }            
+        </style>
+      </a>
+      {% else %}
+      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="relative nammenu ">{{link.title | split: '[' | first }}</a>
+      {% endif %}
+
+      <a href="#c{{i}}" class="toggle-menumobile collapsed js_icon_horizon-menu" data-toggle="collapse" aria-expanded="false">
+        <i class="fa fa-angle-right"></i>
+      </a>
+      <div id="c{{i}}" class="collapse " >
+        {% for childlink in linklists[child_list_handle].links %}
+        {% assign grand_child_list_handle = childlink.title | handle %}
+        {% if linklists[grand_child_list_handle].links != blank %}
+        <h2 class="title_menu_mb ">
+          {% if childlink.title contains '[' %}
+
+          <a href="{{ childlink.url }}" title="{{childlink.title | split: '[' | first }}" class="delay03 relative uppercase menu_lv1 "><span>{{childlink.title | split: '[' | first }}</span>
+            <div class="absolute label_menu label_menu-{{childlink.title | handleize}}-{{forloop.index}}" {% if childlink.title contains '(' %}style="background-color: {{childlink.title | split: '(' | last  | split: ')' | first}};"{% endif %}>{{childlink.title | split: '[' | last  | split: ']' | first}}</div>
+            <style>
+              .label_menu-{{childlink.title | handleize}}-{{forloop.index}}:before {
+                border-top: 4px solid {{childlink.title | split: '(' | last  | split: ')' | first}};
+              }            
+            </style>
+          </a>
+          {% else %}
+          <a href="{{ childlink.url }}" title="{{childlink.title | split: '[' | first }}" class="delay03 uppercase menu_lv1 "><span>{{childlink.title | split: '[' | first }}</span></a>
+          {% endif %}
+
+        </h2>
+        <ul class="list-unstyled mb-0">
+          {% for grandchildlink in linklists[grand_child_list_handle].links %}
+          <li>
+
+            {% if grandchildlink.title contains '[' %}
+            {%- assign label  = grandchildlink.title | split: '[' | last  | split: ']' | first -%}  
+            {%- assign bgc  = grandchildlink.title | split: '(' | last  | split: ')' | first -%}
+            <a href="{{ grandchildlink.url }}" title="{{grandchildlink.title | split: '[' | first }}" class="relative delay03 uppercase menu_lv1 "><span>{{grandchildlink.title | split: '[' | first }}</span>
+              <div class="absolute label_menu label_menu-{{grandchildlink.title | handleize}}-{{forloop.index}}" {% if grandchildlink.title contains '(' %}style="background-color: {{grandchildlink.title | split: '(' | last  | split: ')' | first}};"{% endif %}>{{grandchildlink.title | split: '[' | last  | split: ']' | first}}</div>
+            <style>
+              .label_menu-{{grandchildlink.title | handleize}}-{{forloop.index}}:before {
+                border-top: 4px solid {{grandchildlink.title | split: '(' | last  | split: ')' | first}};
+              }            
+            </style>
+            </a>
+            {% else %}
+            <a href="{{ grandchildlink.url }}" title="{{grandchildlink.title | split: '[' | first }}" class="delay03 uppercase menu_lv1 "><span>{{grandchildlink.title | split: '[' | first }}</span></a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <h2 class="title_menu_mb title_only_one"><a href="{{childlink.url}}">{{childlink.title}}</a></h2>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% assign i= i| plus :1 %}
+    </div>
+    {% else %}
+
+    <div class="menu-horizon-list ">
+      {% if link.title contains '[' %}
+      {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
+      {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
+      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="nammenu relative delay03 uppercase menu_lv1 "><span>{{link.title | split: '[' | first }}</span>
+        <div class="absolute label_menu label_menu-{{link.title | handleize}}-{{forloop.index}}" {% if link.title contains '(' %}style="background-color: {{link.title | split: '(' | last  | split: ')' | first}};"{% endif %}>{{link.title | split: '[' | last  | split: ']' | first}}</div>
+        <style>
+          .label_menu-{{link.title | handleize}}-{{forloop.index}}:before {
+            border-top: 4px solid {{link.title | split: '(' | last  | split: ')' | first}};
+          }            
+        </style>
+      </a>
+      {% else %}
+      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="nammenu delay03 uppercase menu_lv1 "><span>{{link.title | split: '[' | first }}</span></a>
+      {% endif %}
+    </div>
+
+    {% endif %}
+    {% endfor %}
+  </div> 
+</div>
+<div class="bg-horizon-menu js-bg-horizon-menu">
+</div>

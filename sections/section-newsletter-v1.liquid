@@ -1,0 +1,148 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-newsletter-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% if settings.newsletter_form_action != blank %}
+  {% assign form_action = settings.newsletter_form_action %}
+  {% else %}
+  {% assign form_action = '#' %}
+  {% endif %}
+  <div class="section-newsletter-v1" style="background-color : {{section.settings.bgcolor-section}}">  
+    <div class="container container-v2">
+      <div class="box-content">
+      {% if section.settings.img_title != blank %}
+      <div class="text-center imgtop">
+        <img src="{{section.settings.img_title | img_url : 'master'}} ">
+      </div>
+      {% endif %}
+      
+      {% if section.settings.title_newletter != blank %}
+      <div class="title_newletter text-center">
+        <h3 class="title_heading" style="color : {{section.settings.color_title}}">{{section.settings.title_newletter}}</h3>
+      </div>
+      {% endif %}
+
+      {% if section.settings.content_newletter != blank %}
+      <p class=" content" style="color : {{section.settings.color_content}}">{{section.settings.content_newletter}}</p>
+      {% endif %}      
+
+      <div class="row ">        
+        <div class="col-lg-12">
+          <div class="newletter_email">          
+            <form class="needs-validation form-inline" action="{{form_action}}" method="post">
+              <div class="form-group">                           
+                <input type="email" name="EMAIL" class="form-control" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" required >                 
+              </div>
+              <button class="btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }} <i  class="{{section.settings.title_icon1}}"></i></button>
+            </form>
+          </div> 
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-newsletter-v1 .newletter_email form .form-group .form-control{
+    color:{{section.settings.color_title}};
+  }
+  .section-newsletter-v1 .newletter_email form .btn{
+  	color:{{section.settings.color_button}};
+  }
+  .section-newsletter-v1 .newletter_email form{
+  	border-bottom: 2px solid {{section.settings.color_title}};
+  }
+  .section-newsletter-v1 .newletter_email form .form-group input::placeholder{
+  	color:{{section.settings.color_textinput}};
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Newsletter v1",
+  "settings": [
+	{
+      "type": "color",
+      "id": "bgcolor-section",
+      "label": "Background Color section",
+	  "default": "#f3f3f3"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_title",
+      "label": "Image top title",
+	  "info": "100 x 60px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_newletter",
+      "label": "Title Newletter",
+      "default": "SIGN UP FOR NEWSLETTER"
+    },
+	{
+      "type": "color",
+      "id": "color_title",
+      "label": "Color title",
+	  "default": "#000"
+    },
+	{
+      "type": "text",
+      "id": "content_newletter",
+      "label": "Content Newletter",
+      "default": "TO RECEIVE UPDATES"
+    },
+	{
+      "type": "color",
+      "id": "color_content",
+      "label": "Color content",
+	  "default": "#979797"
+    },
+	{
+      "type": "text",
+      "id": "title_icon1",
+      "label": "Icon",
+      "default": "fa fa-angle-right",
+      "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
+    },
+	{
+      "type": "color",
+      "id": "color_button",
+      "label": "Color button",
+	  "default": "#000"
+    },
+	{
+      "type": "color",
+      "id": "color_textinput",
+      "label": "Color text input",
+	  "default": "#979797"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter v1",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

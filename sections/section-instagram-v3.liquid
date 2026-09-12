@@ -1,0 +1,128 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-instagram-v3" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-instagram-v3 mt-all">
+    <div class="container container-v1">
+      {% assign instafeed_img = '{{image}}' %}
+      {% assign instafeed_link = '{{link}}' %}
+
+      {% if section.settings.ins_userid != blank and section.settings.ins_access_token != blank %}
+      <script>
+        jQuery(document).ready(function($) {
+          var feed = new Instafeed({
+            get: 'user',
+            userId: '{{section.settings.ins_userid}}',
+            accessToken: '{{section.settings.ins_access_token}}',
+            template: '<div class=" list_image item-intas"> <div class="img_insta"> <img src="{{instafeed_img}}" class="img-responsive w-100" alt="instagram" /> <div class="absolute content_text flex center"> <a href="{{instafeed_link}}" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a> <h4 class="title text-center"><a href="{{instafeed_link}}" target="_blank">{{section.settings.item_title}}</a></h4> </div> </div> </div>',
+            target: 'engoj_section_instagram_main',
+            resolution: 'standard_resolution',
+            limit: '{{section.settings.ins_limit_number}}'
+          });
+          feed.run();
+        });
+      </script>
+      {% endif %}
+
+      <div class="instagram_v3 instagram center">
+        <div id="engoj_section_instagram_main" class="insta_image list-item-intas">  
+          {% assign limit_image = section.settings.ins_limit_number %}
+          {% if section.settings.ins_userid == blank or section.settings.ins_access_token == blank %}
+          {% if shop.permanent_domain == "petiza-store-demo.myshopify.com" %}
+          {% for i in (1..limit_image) %}
+
+          <div class=" list_image item-intas">
+            <div class="img_insta">
+              <img src="{{ 'instagram' | append: i | append: '.jpg' | file_img_url: 'master' }}" class="img-responsive w-100" alt="instagram" />
+
+              <div class="absolute content_text flex center">
+                <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"><i class="{{section.settings.item_icon}}"></i></a>
+                <h4 class="title text-center"><a href="https://www.instagram.com/" target="_blank">{{section.settings.item_title}}</a></h4>
+              </div>
+            </div>
+
+          </div>
+
+          {% endfor %}
+          {% else %}
+          <div class=" list_image item-intas">
+            <div class="img_insta">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              <div class="absolute content_text flex center">
+                <a href="https://www.instagram.com/" class="delay03 inline-block" target="_blank"><i class="flaticon-instagram"></i></a>
+                <h4 class="title text-center"><a href="https://www.instagram.com/" target="_blank">SHOP IT</a></h4>
+              </div>
+            </div>
+          </div>  
+          {% endif %}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Instagram v3",
+  "settings": [
+	
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "9"
+    },
+    {
+      "type": "header",
+      "content": "Item"
+    },
+    {
+      "type": "text",
+      "id": "item_icon",
+      "label": "Icon",
+      "default": "icon-intargram",
+      "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
+    },
+    {
+      "type": "text",
+      "id": "item_title",
+      "label": "Title",
+      "default": "SHOP IT"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram v3 ",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+

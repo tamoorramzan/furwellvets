@@ -1,0 +1,166 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-product-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-product-v2 mt-all">
+    <div class="container container-v1">
+      <div class="row justify-content-around">
+        <div class="col-lg-3 col-md-4">
+          <div class="box-info">            
+            <div class="content-banner">
+              {% if section.settings.title_1 != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title}}">{{section.settings.title_1}}</h3>
+              {% endif %}
+              
+              {% if section.settings.description != blank %}
+              <p class="description mb-0" style="color : {{section.settings.color_description}}">{{section.settings.description}}</p>
+              {% endif %}
+              
+              <div class="info-bottom"> 
+                {% if section.settings.button_1 != blank %}
+                <a href="{{section.settings.url_button1}}" class="button-all-site" style="color :{{section.settings.color_btn}}">
+                  {{section.settings.button_1}}                
+                </a>
+                {% endif %}
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 mt-product-responsive">
+            <div class="row js_product_v2">   
+              {% assign products_limit = section.settings.products_limit %}
+              {% assign col = section.settings.select_collection %}
+              {% for product in collections[col].products limit: products_limit %}
+              <div class="col-12 product_item">
+                {% include 'product-item-v1' %}
+              </div>
+              {% else %}
+              {% for i in (1..section.settings.products_limit) %}
+              <div class="col-lg-4 col-6 product_item">
+                {% include 'empty-product-item' %}
+              </div>
+              {% endfor %}
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .section-product-v2 .box-info .content-banner .button-all-site{
+    color:{{section.settings.color_btn}} !important;
+    border: 1px solid {{section.settings.color_btn}} !important;
+  }
+  .section-product-v2 .box-info .content-banner .button-all-site:hover{
+  	color:{{section.settings.color_btn_hover}} !important;
+    border: 1px solid {{section.settings.color_bgbtn_hover}} !important;
+  }
+  .section-product-v2 .box-info .content-banner .button-all-site:hover:before{
+  	background:{{section.settings.color_bgbtn_hover}} !important;
+  }
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Product v2",
+  "settings": [
+	{
+      "type": "text",
+      "id": "title_1",
+      "label": "Title banner 1",
+      "default": "The Edit: Autumn Jackets"
+    },
+
+	{
+      "type": "color",
+      "id": "color_title",
+      "label": "color title"
+    },
+	{
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Washing your face properly helps remove dirt, cleanses pores, and helps prevent acne and other signs of skin aging"
+    },
+	{
+      "type": "color",
+      "id": "color_description",
+      "label": "color Description"
+    },
+  	{
+      "type": "text",
+      "id": "button_1",
+      "label": "button 1",
+      "default": "Shop now"
+    },
+	{
+      "type": "url",
+      "id": "url_button1",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "color",
+      "id": "color_btn",
+      "label": "color button"
+    },
+	{
+      "type": "color",
+      "id": "color_btn_hover",
+      "label": "color button hover"
+    },
+	{
+      "type": "color",
+      "id": "color_bgbtn_hover",
+      "label": "Background color button hover"
+    },
+	{
+      "type": "header",
+      "content": "Info Product"
+    },
+
+    {
+      "type": "collection",
+      "id": "select_collection",
+      "label": "Select Collection"
+    },
+	{
+      "type": "range",
+      "id": "products_limit",
+      "label": "Limit products",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product v2",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

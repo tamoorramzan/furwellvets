@@ -1,0 +1,265 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-banner-v2 mt-all">
+    <div class="container container-v1">
+      <div class="row">
+        <div class="col-lg-6  col-xs-12 col-sm-6 left pr-lg-0">
+          <div class="box-banner">
+            <div class="picture">              
+              <a href="{{section.settings.button_url_banner_top_left}}">
+                {% if section.settings.image_banner1 != blank %}
+                <img src="{{section.settings.image_banner1|img_url:'master'}}" class="img-responsive" alt="">
+                {% else %}
+                <img src="//placehold.it/850x850" class="img-responsive" alt="banner">
+                {% endif %}
+              </a>
+            </div>
+            <div class="topbanner-info text-center">
+              {% if section.settings.title_top_left != blank %}
+              <h3 class="title_heading" style="color : {{section.settings.color_title1}}"> {{section.settings.title_top_left}}</h3>
+              {% endif %}
+              {% if section.settings.description_banner != blank %}
+              <p class="desc mb-0" style="color : {{section.settings.color_description_banner}}">{{section.settings.description_banner}}</p>
+              {% endif %}
+            </div>
+            <div class="banner-info banner1">
+              <div class="banner-info-inner ">                
+                {% if section.settings.buttom_banner_top_left != blank %}
+                <div class="div-bottom">
+                  <a class="button button1"  href="{{section.settings.button_url_banner_top_left}}" style="color : {{section.settings.color_button1}}"><span>{{section.settings.buttom_banner_top_left}}</span></a>
+                </div>
+                {% endif %}                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xs-12 col-sm-6 right pl-lg-0">
+          <div class="box-banner">
+            <div class="picture">              
+              <a href="{{section.settings.button_url_banner_top_right}}">
+                {% if section.settings.image_banner3 != blank %}
+                <img src="{{section.settings.image_banner3|img_url:'master'}}" class="img-responsive" alt="">
+                {% else %}
+                <img src="//placehold.it/850x425" class="img-responsive" alt="banner">
+                {% endif %}
+              </a>
+            </div>
+            <div class="banner-info">
+              <div class="banner-info-inner ">
+                {% if section.settings.title_top_right != blank %}
+                 <h3 class="title_heading" style="color : {{section.settings.color_title3}}"> {{section.settings.title_top_right}}</h3>
+                {% endif %}
+                {% if section.settings.buttom_banner_top_right != blank %}
+                <div class="div-bottom">
+                  <a class="button button3"  href="{{section.settings.button_url_banner_top_right}}" style="color : {{section.settings.color_button3}}"><span>{{section.settings.buttom_banner_top_right}}</span></a>
+                </div>
+                {% endif %}                
+              </div>
+            </div>
+          </div>          
+          <div class="box-banner bottom">
+            <div class="picture">              
+              <a href="{{section.settings.button_url_banner_bottom_right}}">
+                {% if section.settings.image_banner4 != blank %}
+                <img src="{{section.settings.image_banner4|img_url:'master'}}" class="img-responsive" alt="">
+                {% else %}
+                <img src="//placehold.it/850x425" class="img-responsive" alt="banner">
+                {% endif %}
+              </a>
+            </div>
+            <div class="banner-info">
+              <div class="banner-info-inner ">
+                {% if section.settings.title_bottom_right != blank %}
+                 <h3 class="title_heading" style="color : {{section.settings.color_title4}}"> {{section.settings.title_bottom_right}}</h3>
+                {% endif %}
+                {% if section.settings.buttom_banner_bottom_right != blank %}
+                <div class="div-bottom">
+                  <a class="button button4"  href="{{section.settings.button_url_banner_bottom_right}}" style="color : {{section.settings.color_button4}}"><span>{{section.settings.buttom_banner_bottom_right}}</span></a>
+                </div>
+                {% endif %}                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+                
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v2 .box-banner .banner-info .button1:before{
+    border: 1px solid {{section.settings.color_button1}};
+  }
+  .section-banner-v2 .box-banner .banner-info .button3:before{
+    border: 1px solid {{section.settings.color_button3}};
+  }
+  .section-banner-v2 .box-banner .banner-info .button4:before{
+    border: 1px solid {{section.settings.color_button4}};
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Banner v2",
+  "class": "index-section",
+  "settings": [ 
+	{
+      "type": "header",
+      "content": "Info Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_banner1",
+      "label": "Picture banner top left ",
+	  "info": "850 x 850px recommended"
+    },
+	{
+      "type": "text",
+      "id": "title_top_left",
+      "label": "Title banner top left",
+      "default": "For men’s"
+    },
+	{
+      "type": "color",
+      "id": "color_title1",
+      "label": "Color title"
+    },
+	{
+      "type": "textarea",
+      "id": "description_banner",
+      "label": "Description Banner",
+      "default": "Limited edition. Eco-friendly. Not just for working out"
+    },
+	{
+      "type": "color",
+      "id": "color_description_banner",
+      "label": "Color Description"
+    },
+	{
+      "type": "text",
+      "id": "buttom_banner_top_left",
+      "label": "Button banner top left",
+      "default": "SHOP NOW"
+    },
+	{
+      "type": "color",
+      "id": "color_button1",
+      "label": "Color button"
+    },
+	{
+      "type": "url",
+      "id": "button_url_banner_top_left",
+      "label": "URL button banner top left",
+      "default": "/collections/all"
+    },
+
+
+	{
+      "type": "header",
+      "content": "Info Right"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_banner3",
+      "label": "Picture banner top right ",
+    "info": "850 x 425px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_top_right",
+      "label": "Title banner top right",
+      "default": "For men’s"
+    },
+	{
+      "type": "color",
+      "id": "color_title3",
+      "label": "Color title"
+    },
+    {
+      "type": "text",
+      "id": "buttom_banner_top_right",
+      "label": "Button banner",
+      "default": "SHOP NOW"
+    },
+	{
+      "type": "color",
+      "id": "color_button3",
+      "label": "Color Button"
+    },
+    {
+      "type": "url",
+      "id": "button_url_banner_top_right",
+      "label": "URL button banner top right",
+      "default": "/collections/all"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_banner4",
+      "label": "Picture banner bottom right ",
+    "info": "850 x 425px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_bottom_right",
+      "label": "Title banner bottom right",
+      "default": "For men’s"
+    },
+	{
+      "type": "color",
+      "id": "color_title4",
+      "label": "Color title"
+    },
+    {
+      "type": "text",
+      "id": "buttom_banner_bottom_right",
+      "label": "Button banner",
+      "default": "SHOP NOW"
+    },
+	{
+      "type": "color",
+      "id": "color_button4",
+      "label": "Color Button"
+    },
+   {
+      "type": "url",
+      "id": "button_url_banner_bottom_right",
+      "label": "URL button banner bottom right",
+      "default": "/collections/all"
+    },
+
+
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner v2",
+      "category": "HOME PAGE"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

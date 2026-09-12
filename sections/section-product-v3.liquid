@@ -1,0 +1,236 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-product-v3" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-product-v3 mt-all">
+    {% for block in section.blocks %}
+    {% if block.type == 'collection' %}
+    <div class="banner_box align-items-center">
+      <div class="banner-left  {% if block.settings.select_banner == 'banner_left' %}order-2 order-md-2 text-center {% else %}order-2 order-md-1 text-center {% endif %}" >
+        
+          {% if block.settings.title_banner != blank %}
+          <h3 class="bigtitle" style="color : {{block.settings.color_title_banner}}"> {{block.settings.title_banner}}</h3>
+          {% endif %}
+          {% if block.settings.description_banner != blank %}
+          <div class="desc" style="color : {{block.settings.color_description_banner}}">{{block.settings.description_banner}}</div>
+          {% endif %}
+        
+        
+        <div class="listproduct js_product_v3">   
+          {% assign products_limit = block.settings.products_limit %}
+          {% assign col = block.settings.select_collection %}
+          {% for product in collections[col].products limit: products_limit %}
+          <div class="padding-slick  product_item">
+            {% include 'product-item-v1' %}
+          </div>
+          {% else %}
+          {% for i in (1..block.settings.products_limit) %}
+          <div class="padding-slick product_item">
+            {% include 'empty-product-item' %}
+          </div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+        {% if block.settings.buttom_banner != blank %}
+        <div class="mt-3">
+          <a class="button button-{{block.id}}" href="{{block.settings.button_banner_url}}" style="color: {{block.settings.color_buttom_banner}}; background:{{block.settings.bgcolor_buttom_banner}};">
+            <span>{{block.settings.buttom_banner}}</span>
+          </a>
+        </div>
+        {% endif %}
+        
+      </div>
+      <div class="picture-banner {% if block.settings.select_banner == 'banner_left' %}order-1 order-md-1 {% else %}order-1 order-md-2 {% endif %}">
+        <a href="{{block.settings.button_banner_url}}">
+          {% if block.settings.image_banner != blank %}
+          <img src="{{block.settings.image_banner|img_url:'master'}}" class="img-responsive w-100" alt="">
+          {% else %}
+          <img src="//placehold.it/960x800" class="img-fluid w-100" alt="">
+          {% endif %}
+        </a>
+      </div>      
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  {% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+  {% if block.type == "collection" %}
+  .section-product-v3 .banner_box .banner-left .button-{{block.id}}:hover {
+    color : {{block.settings.hovercolor_buttom_banner}} !important;
+    background : {{block.settings.hoverbgcolor_buttom_banner}} !important;
+  }
+
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "Product v3",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+
+  ],
+	  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+		
+        {
+          "type": "select",
+          "id": "select_banner",
+          "label": "Select Banner Style",
+          "options": [
+            {
+              "value": "banner_left",
+              "label": "Banner Left"
+            },
+            {
+              "value": "banner_right",
+              "label": "Banner Right"
+            }
+          ],
+          "default": "banner_left"
+        },
+		
+       {
+      "type": "header",
+      "content": "Info content"
+    },
+	{
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner",
+      "default": " Spring Collection 2019"
+    },
+	{
+      "type": "color",
+      "id": "color_title_banner",
+      "label": "Color Title"
+    },
+	{
+      "type": "textarea",
+      "id": "description_banner",
+      "label": "Description Banner",
+      "default": "Limited edition. Eco-friendly. Not just for<br> working out"
+    },
+	{
+      "type": "color",
+      "id": "color_description_banner",
+      "label": "Color Description"
+    },
+	{
+      "type": "header",
+      "content": "Info Product"
+    },
+
+    {
+      "type": "collection",
+      "id": "select_collection",
+      "label": "Select Collection"
+    },
+	{
+      "type": "range",
+      "id": "products_limit",
+      "label": "Limit products",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 4
+    },
+	{
+      "type": "text",
+      "id": "buttom_banner",
+      "label": "Button name",
+      "default": "SHOP NOW"
+    },
+	{
+      "type": "color",
+      "id": "color_buttom_banner",
+      "label": "Color Button"
+    },
+	{
+      "type": "color",
+      "id": "hovercolor_buttom_banner",
+      "label": "Color hover Button"
+    },
+	{
+      "type": "color",
+      "id": "bgcolor_buttom_banner",
+      "label": "Background Color Button"
+    },
+	{
+      "type": "color",
+      "id": "hoverbgcolor_buttom_banner",
+      "label": "Background Color hover  Button"
+    },
+	{
+      "type": "url",
+      "id": "button_banner_url",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "header",
+      "content": "Info right"
+    },
+	{
+      "type": "image_picker",
+      "id": "image_banner",
+      "label": "Image",
+	  "info": "955 x 800px  recommended"
+    }          
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product v3",
+      "category": "HOME PAGE",
+		"blocks": [
+        {
+          "type": "collection",
+          "settings": {
+          }
+        },
+		 {
+          "type": "collection",
+          "settings": {
+          }
+        },
+		 {
+          "type": "collection",
+          "settings": {
+          }
+        }		
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

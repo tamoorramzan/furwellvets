@@ -1,0 +1,216 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v3" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-banner-v3 mt-all">
+    {% for block in section.blocks %}
+    {% if block.type == 'collection' %}
+    <div class="banner_box align-items-center" style="background-color:{{block.settings.color_background}};">
+      <div class="banner-left  {% if block.settings.select_banner == 'banner_left' %}order-1 order-md-2 text-left {% else %}order-1 order-md-1 text-right {% endif %}" >
+        
+          {% if block.settings.titletop_banner != blank %}
+          <h6 class="title" style="color : {{block.settings.color_titletop_banner}}">{{block.settings.titletop_banner}}</h6>
+          {% endif %}
+          {% if block.settings.title_banner != blank %}
+          <h3 class="title_heading" style="color : {{block.settings.color_title_banner}}"> {{block.settings.title_banner}}</h3>
+          {% endif %}
+          {% if block.settings.description_banner != blank %}
+          <div class="desc" style="color : {{block.settings.color_description_banner}}">{{block.settings.description_banner}}</div>
+          {% endif %}
+          {% if block.settings.buttom_banner != blank %}
+          <a class="button button-{{block.id}}" href="{{block.settings.button_banner_url}}" style="color: {{block.settings.color_buttom_banner}}; background:{{block.settings.bgcolor_buttom_banner}};">
+            <span>{{block.settings.buttom_banner}}</span>
+          </a>
+          {% endif %}
+        
+      </div>
+      <div class="picture-banner {% if block.settings.select_banner == 'banner_left' %}order-2 order-md-1 {% else %}order-2 order-md-2 {% endif %}">
+        <a href="{{block.settings.button_banner_url}}">
+          {% if block.settings.image_banner != blank %}
+          <img src="{{block.settings.image_banner|img_url:'master'}}" class="img-responsive " alt="">
+          {% else %}
+          <img src="//placehold.it/960x800" class="img-fluid" alt="">
+          {% endif %}
+        </a>
+      </div>      
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  {% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+  {% if block.type == "collection" %}
+  .section-banner-v3 .banner_box .banner-left .button-{{block.id}}:hover {
+    color : {{block.settings.hovercolor_buttom_banner}} !important;
+    background : {{block.settings.hoverbgcolor_buttom_banner}} !important;
+  }
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "Banner v3",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+
+  ],
+	  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+		
+        {
+          "type": "select",
+          "id": "select_banner",
+          "label": "Select Banner Style",
+          "options": [
+            {
+              "value": "banner_left",
+              "label": "Banner Left"
+            },
+            {
+              "value": "banner_right",
+              "label": "Banner Right"
+            }
+          ],
+          "default": "banner_left"
+        },
+          {
+        "type": "color",
+        "id": "color_background",
+        "label": "Color Background"
+      },
+		
+       {
+      "type": "header",
+      "content": "Info content"
+    },
+	{
+      "type": "text",
+      "id": "titletop_banner",
+      "label": "Title top",
+      "default": "HANDPICK COLLECTION"
+    },
+	{
+      "type": "color",
+      "id": "color_titletop_banner",
+      "label": "Color Title Top"
+    },
+	{
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner",
+      "default": " Spring Collection 2019"
+    },
+	{
+      "type": "color",
+      "id": "color_title_banner",
+      "label": "Color Title"
+    },
+	{
+      "type": "textarea",
+      "id": "description_banner",
+      "label": "Description Banner",
+      "default": "Limited edition. Eco-friendly. Not just for<br> working out"
+    },
+	{
+      "type": "color",
+      "id": "color_description_banner",
+      "label": "Color Description"
+    },
+	{
+      "type": "text",
+      "id": "buttom_banner",
+      "label": "Button name",
+      "default": "SHOP NOW"
+    },
+	{
+      "type": "color",
+      "id": "color_buttom_banner",
+      "label": "Color Button"
+    },
+	{
+      "type": "color",
+      "id": "hovercolor_buttom_banner",
+      "label": "Color hover Button"
+    },
+	{
+      "type": "color",
+      "id": "bgcolor_buttom_banner",
+      "label": "Background Color Button"
+    },
+	{
+      "type": "color",
+      "id": "hoverbgcolor_buttom_banner",
+      "label": "Background Color hover  Button"
+    },
+	{
+      "type": "url",
+      "id": "button_banner_url",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+	{
+      "type": "header",
+      "content": "Info right"
+    },
+	{
+      "type": "image_picker",
+      "id": "image_banner",
+      "label": "Image",
+	  "info": "955 x 800px  recommended"
+    }          
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner v3",
+      "category": "HOME PAGE",
+		"blocks": [
+        {
+          "type": "collection",
+          "settings": {
+          }
+        },
+		 {
+          "type": "collection",
+          "settings": {
+          }
+        },
+		 {
+          "type": "collection",
+          "settings": {
+          }
+        }		
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
