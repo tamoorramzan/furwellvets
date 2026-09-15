@@ -44,7 +44,18 @@
   {% if settings.enable_rtl_mode %}
   {{ 'style_rtl.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-  
+
+  <!-- FurrWell theme ================================================== -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Work+Sans:wght@400;500;600;700&display=swap">
+  {{ 'furrwell-theme.css' | asset_url | stylesheet_tag }}
+  <style>
+    :root {
+      --fw-navy: {{ settings.fw_color_navy | default: '#2E4A6B' }};
+      --fw-gold: {{ settings.fw_color_gold | default: '#E7B84D' }};
+      --fw-teal: {{ settings.fw_color_teal | default: '#4C9C97' }};
+    }
+  </style>
+
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -118,7 +129,7 @@ Add the page template as a class for easy page or template specific styling.
       {% if settings.enable_promo_topbar %}
       {% include 'promo-topbar' %}
       {% endif %}
-        {% section 'header' %}
+        {% section 'furrwell-header' %}
 
           <!-- HEADING HIDDEN SEO -->
           {% if template contains 'index' %}
@@ -131,7 +142,7 @@ Add the page template as a class for easy page or template specific styling.
           {% include 'popup-login' %}
           {{ content_for_layout }}
 
-        {% section 'footer' %}
+        {% section 'furrwell-footer' %}
 
     </div>
     
@@ -206,6 +217,7 @@ Add the page template as a class for easy page or template specific styling.
   {% endcomment %}
   {{ 'collection.js' | asset_url | script_tag }}
   {{ 'engo-scripts.js' | asset_url | script_tag }}
+  {{ 'furrwell-theme.js' | asset_url | script_tag }}
 
   
   {% include 'product-quick-view' %}

@@ -1,0 +1,50 @@
+<!-- /sections/furrwell-testimonials.liquid -->
+<div class="fw-scope">
+  <section class="fw-testimonials">
+    <div class="fw-wrap">
+      <h2 style="font-size:26px;margin-bottom:26px;">{{ section.settings.heading | default: 'What pet owners say' }}</h2>
+      <div class="fw-testimonials-grid">
+        {% for block in section.blocks %}
+        <div class="fw-card fw-testimonial" {{ block.shopify_attributes }}>
+          <div class="fw-stars">
+            {% assign rating = block.settings.rating | default: 5 %}
+            {% for i in (1..5) %}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="{% if i <= rating %}var(--fw-gold){% else %}#e4e1d6{% endif %}"><path d="M12 2l3 7h7l-5.7 4.3L18 21l-6-4.3L6 21l1.7-7.7L2 9h7z"/></svg>
+            {% endfor %}
+          </div>
+          <p class="fw-testimonial-quote">{{ block.settings.quote | default: '[Add a real customer review here]' }}</p>
+          <span class="fw-testimonial-author">{{ block.settings.author | default: '[Customer name]' }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "FurrWell Testimonials",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What pet owners say" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "author", "label": "Customer name" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "default": {
+    "blocks": [
+      { "type": "testimonial" },
+      { "type": "testimonial" },
+      { "type": "testimonial" }
+    ]
+  }
+}
+{% endschema %}

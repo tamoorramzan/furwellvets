@@ -1,0 +1,42 @@
+<!-- /sections/furrwell-featured-collection.liquid -->
+<div class="fw-scope">
+  {% assign coll = collections[section.settings.collection] %}
+  <section class="fw-feature-banner">
+    <div class="fw-wrap">
+      <div class="fw-feature-inner">
+        <div class="fw-feature-copy">
+          {% if section.settings.eyebrow != blank %}<span class="fw-eyebrow" style="color:var(--fw-gold);">{{ section.settings.eyebrow }}</span>{% endif %}
+          <h2>{{ section.settings.heading | default: coll.title }}</h2>
+          {% if section.settings.text != blank %}<p>{{ section.settings.text }}</p>{% endif %}
+          {% if section.settings.button_label != blank %}
+          <div style="margin-top:8px;">
+            <a href="{% if coll %}{{ coll.url }}{% else %}{{ section.settings.button_url }}{% endif %}" class="fw-btn-primary">{{ section.settings.button_label }}</a>
+          </div>
+          {% endif %}
+        </div>
+        <div class="fw-feature-icon">
+          {% if section.settings.icon != blank %}
+          <img src="{{ section.settings.icon | img_url: '200x' }}" alt="">
+          {% else %}
+          <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="var(--fw-gold)" stroke-width="1.2"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5Z"/><path d="M9 12l2 2 4-4"/></svg>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "FurrWell Featured Collection",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Featured Collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The Seasonal Wellness Edit" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the Edit" },
+    { "type": "url", "id": "button_url", "label": "Button link (used if no collection selected)" },
+    { "type": "image_picker", "id": "icon", "label": "Icon" }
+  ]
+}
+{% endschema %}
