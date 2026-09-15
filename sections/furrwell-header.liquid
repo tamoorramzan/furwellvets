@@ -1,0 +1,200 @@
+<!-- /sections/furrwell-header.liquid -->
+<div class="fw-scope">
+
+  {% if section.settings.announcement_text != blank or section.settings.track_order_url != blank or section.settings.contact_url != blank %}
+  <div class="fw-topbar">
+    <div class="fw-wrap fw-topbar-row">
+      <span>{{ section.settings.announcement_text }}</span>
+      <div class="fw-topbar-links">
+        {% if section.settings.track_order_url != blank %}
+        <a href="{{ section.settings.track_order_url }}">{{ section.settings.track_order_label | default: 'Track Order' }}</a>
+        {% endif %}
+        {% if section.settings.contact_url != blank %}
+        <a href="{{ section.settings.contact_url }}">{{ section.settings.contact_label | default: 'Contact Us' }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="fw-header-main">
+    <div class="fw-wrap fw-header-inner">
+
+      <button type="button" class="fw-burger" data-fw-burger aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="{{ routes.root_url }}" class="fw-logo">
+        {% if section.settings.logo != blank %}
+        <img src="{{ section.settings.logo | img_url: '160x' }}" alt="{{ shop.name }}" width="44" height="44">
+        {% else %}
+        <span class="fw-logo-mark">
+          <svg width="28" height="25" viewBox="0 0 34 30" fill="none">
+            <path d="M17 27c-6.2-4.4-12.4-8.8-12.4-14.6C4.6 7.7 8 4.4 12 4.4c2.2 0 4.1 1 5 2.6V27Z" fill="var(--fw-navy)"/>
+            <path d="M17 27c6.2-4.4 12.4-8.8 12.4-14.6 0-4.7-3.4-8-7.4-8-2.2 0-4.1 1-5 2.6V27Z" fill="var(--fw-gold)"/>
+            <path d="M17 9v6M14 12h6" stroke="var(--fw-teal)" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        {% endif %}
+        <span class="fw-logo-text">
+          <span class="fw-name fw-brand-word">{{ section.settings.brand_name | default: shop.name }}</span>
+          {% if section.settings.brand_tagline != blank %}
+          <span class="fw-tag">{{ section.settings.brand_tagline }}</span>
+          {% endif %}
+        </span>
+      </a>
+
+      <form action="{{ routes.search_url }}" method="get" role="search" class="fw-search">
+        <input type="text" name="q" placeholder="{{ section.settings.search_placeholder | default: 'Search products...' }}" value="{{ search.terms | escape }}">
+        <input type="hidden" name="type" value="product">
+        <button type="submit" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+        </button>
+      </form>
+
+      <div class="fw-header-actions">
+        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>{% if customer %}Account{% else %}Sign In{% endif %}</span>
+        </a>
+        <a href="{{ routes.cart_url }}" class="fw-cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="fw-cart-count">{{ cart.item_count }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% assign main_menu = section.settings.main_menu %}
+  <nav class="fw-nav">
+    <div class="fw-wrap">
+      <ul class="fw-navbar">
+        {% for link in linklists[main_menu].links %}
+          {% assign child_handle = link.title | handleize %}
+          {% assign mega_block = nil %}
+          {% for block in section.blocks %}
+            {% if block.settings.match_title | handleize == child_handle %}
+              {% assign mega_block = block %}
+            {% endif %}
+          {% endfor %}
+
+          <li class="fw-nav-item">
+            {% if mega_block %}
+              <span class="fw-nav-pill">{{ link.title }}</span>
+              {% assign sub_links = link.links %}
+              {% assign half = sub_links.size | plus: 1 | divided_by: 2 %}
+              <div class="fw-mega">
+                {% if sub_links.size > 0 %}
+                <div class="fw-mega-col">
+                  <span class="fw-mega-heading">{{ mega_block.settings.col1_heading | default: 'Shop' }}</span>
+                  {% for sublink in sub_links %}
+                    {% if forloop.index0 < half %}<a href="{{ sublink.url }}">{{ sublink.title }}</a>{% endif %}
+                  {% endfor %}
+                </div>
+                {% if sub_links.size > half %}
+                <div class="fw-mega-col">
+                  <span class="fw-mega-heading">{{ mega_block.settings.col2_heading | default: 'More' }}</span>
+                  {% for sublink in sub_links %}
+                    {% if forloop.index0 >= half %}<a href="{{ sublink.url }}">{{ sublink.title }}</a>{% endif %}
+                  {% endfor %}
+                  <a href="{{ link.url }}" style="color:var(--fw-navy);font-weight:600;">View All &rarr;</a>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% if mega_block.settings.promo_heading != blank %}
+                <div class="fw-mega-promo" {% if mega_block.settings.promo_color == 'warm' %}style="background:linear-gradient(160deg, #b5602c, var(--fw-gold));"{% endif %}>
+                  <h3>{{ mega_block.settings.promo_heading }}</h3>
+                  {% if mega_block.settings.promo_text != blank %}<p>{{ mega_block.settings.promo_text }}</p>{% endif %}
+                  {% if mega_block.settings.promo_link_url != blank %}<a href="{{ mega_block.settings.promo_link_url }}">{{ mega_block.settings.promo_link_label | default: 'Shop now' }} &rarr;</a>{% endif %}
+                </div>
+                {% endif %}
+              </div>
+            {% elsif link.links.size > 0 %}
+              <span class="fw-nav-pill">{{ link.title }}</span>
+              <div class="fw-mega" style="min-width:220px;">
+                <div class="fw-mega-col">
+                  {% for sublink in link.links %}
+                    <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% else %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="fw-mobile-nav" data-fw-mobile-nav>
+    <div class="fw-mobile-nav-backdrop" data-fw-mobile-backdrop></div>
+    <div class="fw-mobile-nav-panel">
+      <div class="fw-mobile-nav-close">
+        <button type="button" data-fw-mobile-close aria-label="Close menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <ul>
+        {% for link in linklists[main_menu].links %}
+          {% assign sub_links = link.links %}
+          <li>
+            {% if sub_links.size > 0 %}
+            <a href="{{ link.url }}" class="fw-mobile-toplink" data-fw-mobile-toplink>{{ link.title }}</a>
+            <ul class="fw-mobile-sub">
+              {% for sublink in sub_links %}
+              <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% else %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "FurrWell Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo (overrides brand mark)" },
+    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "FurrWell" },
+    { "type": "text", "id": "brand_tagline", "label": "Tagline", "default": "Vets Clinic" },
+    { "type": "link_list", "id": "main_menu", "label": "Main menu", "default": "main-menu-1" },
+    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search food, toys, vet services..." },
+    { "type": "header", "content": "Announcement bar" },
+    { "type": "text", "id": "announcement_text", "label": "Announcement text" },
+    { "type": "url", "id": "track_order_url", "label": "Track order link" },
+    { "type": "text", "id": "track_order_label", "label": "Track order label", "default": "Track Order" },
+    { "type": "url", "id": "contact_url", "label": "Contact link" },
+    { "type": "text", "id": "contact_label", "label": "Contact label", "default": "Contact Us" }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega menu",
+      "settings": [
+        { "type": "text", "id": "match_title", "label": "Menu item title to enhance", "info": "Must exactly match a top-level menu item title, e.g. \"Dog\"." },
+        { "type": "text", "id": "col1_heading", "label": "Column 1 heading", "default": "Shop" },
+        { "type": "text", "id": "col2_heading", "label": "Column 2 heading", "default": "More" },
+        { "type": "header", "content": "Promo tile" },
+        { "type": "text", "id": "promo_heading", "label": "Promo heading" },
+        { "type": "text", "id": "promo_text", "label": "Promo text" },
+        { "type": "text", "id": "promo_link_label", "label": "Promo link label", "default": "Shop now" },
+        { "type": "url", "id": "promo_link_url", "label": "Promo link" },
+        { "type": "select", "id": "promo_color", "label": "Promo tile color", "options": [
+          { "value": "brand", "label": "Navy / Teal" },
+          { "value": "warm", "label": "Warm (orange / gold)" }
+        ], "default": "brand" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": []
+  }
+}
+{% endschema %}

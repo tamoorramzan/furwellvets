@@ -1,0 +1,54 @@
+<!-- /sections/furrwell-quick-categories.liquid -->
+<div class="fw-scope">
+  <section class="fw-quick-cats">
+    <div class="fw-wrap">
+      {% if section.settings.heading != blank %}
+      <h2 style="font-size:24px;margin-bottom:24px;">{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="fw-quick-grid">
+        {% for block in section.blocks %}
+          {% assign coll = collections[block.settings.collection] %}
+          <a href="{% if coll %}{{ coll.url }}{% else %}{{ block.settings.url }}{% endif %}" class="fw-quick-tile" style="background:{{ block.settings.bg_color | default: '#eef1e8' }};" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url: '80x' }}" alt="">
+            {% else %}
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--fw-navy)" stroke-width="1.5"><path d="M4 16c0-4 3.5-9 8-9s8 5 8 9"/><circle cx="7" cy="8" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M4 20h16"/></svg>
+            {% endif %}
+            <h3>{{ block.settings.label | default: coll.title }}</h3>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "FurrWell Quick Categories",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop by Pet" }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "url", "id": "url", "label": "Link (used if no collection selected)" },
+        { "type": "text", "id": "label", "label": "Label override" },
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "color", "id": "bg_color", "label": "Background color", "default": "#eef1e8" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "default": {
+    "blocks": [
+      { "type": "tile", "settings": { "label": "Dog", "bg_color": "#e4ecf5" } },
+      { "type": "tile", "settings": { "label": "Cat", "bg_color": "#f5ecd7" } },
+      { "type": "tile", "settings": { "label": "Small Pets", "bg_color": "#e2f0ee" } },
+      { "type": "tile", "settings": { "label": "Vet Services", "bg_color": "#f7e4da" } }
+    ]
+  }
+}
+{% endschema %}

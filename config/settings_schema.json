@@ -8,6 +8,38 @@
     "theme_support_url": "https:\/\/engotheme.com"
   },
   {
+    "name": "FurrWell Brand",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Controls the logo and brand colors used across the new FurrWell header, footer and homepage sections."
+      },
+      {
+        "type": "image_picker",
+        "id": "fw_logo",
+        "label": "Logo"
+      },
+      {
+        "type": "color",
+        "id": "fw_color_navy",
+        "label": "Primary color (navy)",
+        "default": "#2E4A6B"
+      },
+      {
+        "type": "color",
+        "id": "fw_color_gold",
+        "label": "Accent color (gold)",
+        "default": "#E7B84D"
+      },
+      {
+        "type": "color",
+        "id": "fw_color_teal",
+        "label": "Secondary accent (teal)",
+        "default": "#4C9C97"
+      }
+    ]
+  },
+  {
     "name": "Currency",
     "settings": [
       {

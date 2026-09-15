@@ -1,0 +1,43 @@
+<!-- /sections/furrwell-brands.liquid -->
+<div class="fw-scope">
+  <section class="fw-brands">
+    <div class="fw-wrap">
+      <h2 style="font-size:24px;margin-bottom:6px;">{{ section.settings.heading | default: 'Brands We Carry' }}</h2>
+      {% if section.blocks.size == 0 %}
+      <p class="fw-ph" style="margin-bottom:26px;">Add brand logos as blocks in the theme editor</p>
+      {% endif %}
+      <div class="fw-brands-grid">
+        {% for block in section.blocks %}
+        <a href="{{ block.settings.url }}" class="fw-brand-tile" {{ block.shopify_attributes }}>
+          {% if block.settings.logo != blank %}
+          <img src="{{ block.settings.logo | img_url: '200x' }}" alt="{{ block.settings.name | escape }}">
+          {% else %}
+          <span class="fw-ph">{{ block.settings.name | default: 'Brand' }}</span>
+          {% endif %}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "FurrWell Brands",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Brands We Carry" }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        { "type": "image_picker", "id": "logo", "label": "Logo" },
+        { "type": "text", "id": "name", "label": "Name (shown if no logo)" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}
