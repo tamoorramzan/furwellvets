@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "show_multiple_currencies": true,
@@ -5148,278 +5157,6 @@
           "products_limit": 4
         }
       },
-      "1589596994697": {
-        "type": "section-banner-v2",
-        "settings": {
-          "image_banner1": "shopify://shop_images/Banner_820_by_820_1.png",
-          "title_top_left": "",
-          "color_title1": "",
-          "description_banner": "",
-          "color_description_banner": "",
-          "buttom_banner_top_left": "",
-          "color_button1": "#000000",
-          "button_url_banner_top_left": "",
-          "image_banner3": "shopify://shop_images/Banner_820_by_410_1.png",
-          "title_top_right": "",
-          "color_title3": "",
-          "buttom_banner_top_right": "",
-          "color_button3": "#000000",
-          "button_url_banner_top_right": "",
-          "image_banner4": "shopify://shop_images/Banner_820_by_410.png",
-          "title_bottom_right": "",
-          "color_title4": "",
-          "buttom_banner_bottom_right": "",
-          "color_button4": "#000000",
-          "button_url_banner_bottom_right": "",
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1589784328812": {
-        "type": "section-servicebox-v1",
-        "blocks": {
-          "1589784328812-0": {
-            "type": "service",
-            "settings": {
-              "block_title": "24/7 FRIENDLY SUPPORT",
-              "block_content": "Our support team always ready for you to 7 days a week"
-            }
-          },
-          "1589784328812-2": {
-            "type": "service",
-            "settings": {
-              "block_title": "FREE SHIPPING",
-              "block_content": "Free worldwide shipping on all area order above $100"
-            }
-          },
-          "1589784328812-1": {
-            "type": "service",
-            "settings": {
-              "block_title": "7 DAYS EASY RETURN",
-              "block_content": "Product any fault within 7 days for an immediately exchange."
-            }
-          }
-        },
-        "block_order": [
-          "1589784328812-0",
-          "1589784328812-2",
-          "1589784328812-1"
-        ],
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1589785031032": {
-        "type": "section-product-v5",
-        "settings": {
-          "title_section_product": "Sale Arrivals",
-          "select_collection": "sale",
-          "products_limit": 6,
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1590388371156": {
-        "type": "section-banner-v1",
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": "",
-          "title_1": "",
-          "color_title1": "",
-          "button_1": "",
-          "color_button1": "",
-          "url_button1": "",
-          "img_banner1": "shopify://shop_images/Banner_805_by_474.png",
-          "title_2": "",
-          "color_title2": "",
-          "button_2": "",
-          "url_button2": "",
-          "color_button2": "",
-          "img_banner2": "shopify://shop_images/Banner_805_by_474_1.png"
-        }
-      },
-      "1590734569591": {
-        "type": "section-slideshow-v2",
-        "blocks": {
-          "slideshow_MNaxqG": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_cU3Tkh": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_1.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_9EReJk": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_2.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_jdNeDQ": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_3.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_nRX8WU": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_4.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_bc4nmA": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_5.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_qJMngW": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_6.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          },
-          "slideshow_pNCRfd": {
-            "type": "slideshow",
-            "settings": {
-              "block_banerimage": "shopify://shop_images/FurrWell_Vets_Hero_Banner_7.png",
-              "block_title_top": "",
-              "color_block_title_top": "#000000",
-              "block_subtitle": "",
-              "color_subtitle": "#000000",
-              "block_buton": "",
-              "color_block_button": "#ffffff",
-              "color_bg_block_button": "#000000",
-              "color_bg_block_button_hover": "#2dbbf0",
-              "block_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "slideshow_MNaxqG",
-          "slideshow_cU3Tkh",
-          "slideshow_9EReJk",
-          "slideshow_jdNeDQ",
-          "slideshow_nRX8WU",
-          "slideshow_bc4nmA",
-          "slideshow_qJMngW",
-          "slideshow_pNCRfd"
-        ],
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1590739202426": {
-        "type": "section-instagram-v3",
-        "settings": {
-          "ins_userid": "",
-          "ins_access_token": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce",
-          "ins_limit_number": "8",
-          "item_icon": "icon-intargram",
-          "item_title": "SHOP IT",
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1590807415283": {
-        "type": "section-product-v1",
-        "blocks": {
-          "1590807415283-0": {
-            "type": "tab",
-            "settings": {
-              "tab_title": "New",
-              "tab_collection": "new",
-              "tab_limit": 8
-            }
-          },
-          "1590807415283-1": {
-            "type": "tab",
-            "settings": {
-              "tab_title": "Sale",
-              "tab_collection": "sale",
-              "tab_limit": 8
-            }
-          }
-        },
-        "block_order": [
-          "1590807415283-0",
-          "1590807415283-1"
-        ],
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": "",
-          "title-section": "Our Best Seller"
-        }
-      },
       "furrwell-hero-slider": {
         "type": "furrwell-hero-slider",
         "blocks": {
@@ -5462,25 +5199,25 @@
           "t1": {
             "type": "item",
             "settings": {
+              "icon_bg": "#f0ece0",
               "heading": "Free Delivery",
-              "text": "On qualifying orders",
-              "icon_bg": "#f0ece0"
+              "text": "On qualifying orders"
             }
           },
           "t2": {
             "type": "item",
             "settings": {
+              "icon_bg": "#e2f0ee",
               "heading": "Vet-Formulated",
-              "text": "Reviewed by our clinicians",
-              "icon_bg": "#e2f0ee"
+              "text": "Reviewed by our clinicians"
             }
           },
           "t3": {
             "type": "item",
             "settings": {
+              "icon_bg": "#e4ecf5",
               "heading": "Easy Returns",
-              "text": "30-day return window",
-              "icon_bg": "#e4ecf5"
+              "text": "30-day return window"
             }
           }
         },
@@ -5504,9 +5241,9 @@
           "c2": {
             "type": "tile",
             "settings": {
+              "collection": "cat",
               "label": "Cat",
-              "bg_color": "#f5ecd7",
-              "collection": "cat"
+              "bg_color": "#f5ecd7"
             }
           },
           "c3": {
@@ -5547,9 +5284,9 @@
           "cs2": {
             "type": "category",
             "settings": {
+              "collection": "cat",
               "label": "Cat",
-              "fallback_color": "#f5ecd7",
-              "collection": "cat"
+              "fallback_color": "#f5ecd7"
             }
           },
           "cs3": {

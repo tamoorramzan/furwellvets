@@ -241,7 +241,7 @@ Add the page template as a class for easy page or template specific styling.
   
   {% if settings.ena_popup_news %}
   {% if template contains 'index' %}
-  {% include 'popup-newletter' %}
+  {% comment %} {% include 'popup-newletter' %} {% endcomment %}
   {% endif%}
   {% endif %}
   
