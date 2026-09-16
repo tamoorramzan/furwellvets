@@ -5593,16 +5593,16 @@
           "heading": "Explore All Categories"
         }
       },
-      "furrwell-product-grid": {
-        "type": "furrwell-product-grid",
+      "furrwell-bestsellers-grid": {
+        "type": "furrwell-bestsellers-grid",
         "settings": {
           "heading": "Best Sellers",
           "collection": "frontpage",
           "limit": 4
         }
       },
-      "furrwell-featured-collection": {
-        "type": "furrwell-featured-collection",
+      "furrwell-collection-spotlight": {
+        "type": "furrwell-collection-spotlight",
         "settings": {
           "eyebrow": "Featured Collection",
           "heading": "The Seasonal Wellness Edit",
@@ -5685,8 +5685,8 @@
         ],
         "settings": {}
       },
-      "furrwell-articles": {
-        "type": "furrwell-articles",
+      "furrwell-pet-care-tips": {
+        "type": "furrwell-pet-care-tips",
         "settings": {
           "heading": "Pet Care Tips",
           "limit": 3
@@ -5696,8 +5696,8 @@
         "type": "furrwell-newsletter",
         "settings": {}
       },
-      "furrwell-header": {
-        "type": "furrwell-header",
+      "furrwell-site-header": {
+        "type": "furrwell-site-header",
         "blocks": {
           "mm-dog": {
             "type": "mega_menu",
@@ -5781,13 +5781,13 @@
       "furrwell-trust-strip",
       "furrwell-quick-categories",
       "furrwell-category-slider",
-      "furrwell-product-grid",
-      "furrwell-featured-collection",
+      "furrwell-bestsellers-grid",
+      "furrwell-collection-spotlight",
       "furrwell-brands",
       "furrwell-credibility",
       "furrwell-team",
       "furrwell-testimonials",
-      "furrwell-articles",
+      "furrwell-pet-care-tips",
       "furrwell-newsletter"
     ]
   },
