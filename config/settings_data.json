@@ -5157,31 +5157,49 @@
           "products_limit": 4
         }
       },
-      "furrwell-hero-slider": {
-        "type": "furrwell-hero-slider",
+      "furrwell-banner-slider": {
+        "type": "furrwell-banner-slider",
         "blocks": {
           "slide-1": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/FurrWell_Vets_Hero_Banner.png"
+              "eyebrow": "Vet-Formulated. Owner-Trusted.",
+              "heading": "Everything your pet needs, backed by real vets",
+              "text": "Food, care essentials and wellness products selected with our veterinary team.",
+              "button_label": "Shop Best Sellers",
+              "button_url": "/collections/all",
+              "button2_label": "Book a Vet Visit",
+              "button2_url": "/pages/contact"
             }
           },
           "slide-2": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/FurrWell_Vets_Hero_Banner_1.png"
+              "eyebrow": "New Customers",
+              "heading": "Save on your first order",
+              "text": "Sign up today and get a welcome discount on your first purchase.",
+              "button_label": "Shop Now",
+              "button_url": "/collections/all"
             }
           },
           "slide-3": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/FurrWell_Vets_Hero_Banner_2.png"
+              "eyebrow": "Vet Services",
+              "heading": "Book your pet's next check-up",
+              "text": "Wellness exams, vaccinations, dental care and more.",
+              "button_label": "Book Now",
+              "button_url": "/pages/contact"
             }
           },
           "slide-4": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/FurrWell_Vets_Hero_Banner_3.png"
+              "eyebrow": "New This Season",
+              "heading": "Seasonal Wellness Collection",
+              "text": "Curated picks for the season ahead, chosen by our vets.",
+              "button_label": "Explore the Collection",
+              "button_url": "/collections/all"
             }
           }
         },
@@ -5514,7 +5532,7 @@
       }
     },
     "content_for_index": [
-      "furrwell-hero-slider",
+      "furrwell-banner-slider",
       "furrwell-trust-strip",
       "furrwell-quick-categories",
       "furrwell-category-slider",
