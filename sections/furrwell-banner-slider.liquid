@@ -1,4 +1,4 @@
-<!-- /sections/furrwell-hero-slider.liquid -->
+<!-- /sections/furrwell-banner-slider.liquid -->
 <div class="fw-scope">
   <section class="fw-hero">
     <div class="fw-wrap">
@@ -8,6 +8,7 @@
           {% assign is_graphic = false %}
           {% if block.settings.heading == blank and block.settings.text == blank %}{% assign is_graphic = true %}{% endif %}
           {% if is_graphic and block.settings.link_url != blank %}<a href="{{ block.settings.link_url }}" class="fw-hero-slide" {{ block.shopify_attributes }}>{% else %}<div class="fw-hero-slide" {{ block.shopify_attributes }}>{% endif %}
+            {% if block.settings.image != blank %}
             <picture>
               {% if block.settings.image_mobile != blank %}
               <source media="(max-width: 749px)" srcset="{{ block.settings.image_mobile | img_url: '900x' }}">
@@ -17,6 +18,9 @@
                 alt="{{ block.settings.heading | escape }}"
                 loading="{% if forloop.index == 1 %}eager{% else %}lazy{% endif %}">
             </picture>
+            {% else %}
+            <div class="fw-hero-slide-fallback"></div>
+            {% endif %}
             {% unless is_graphic %}
             <div class="fw-hero-scrim"></div>
             <div class="fw-hero-copy">
@@ -57,14 +61,14 @@
 
 {% schema %}
 {
-  "name": "FurrWell Hero Slider",
+  "name": "Banner Slider",
   "settings": [],
   "blocks": [
     {
       "type": "slide",
       "name": "Slide",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image (desktop)" },
+        { "type": "image_picker", "id": "image", "label": "Image (desktop)", "info": "Optional. Without an image, the slide uses a brand-color gradient background." },
         { "type": "image_picker", "id": "image_mobile", "label": "Image (mobile)", "info": "Optional. Falls back to the desktop image." },
         { "type": "url", "id": "link_url", "label": "Link (used when heading/text are blank, for image-only banners)" },
         { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
