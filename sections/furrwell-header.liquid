@@ -73,7 +73,8 @@
           {% assign child_handle = link.title | handleize %}
           {% assign mega_block = nil %}
           {% for block in section.blocks %}
-            {% if block.settings.match_title | handleize == child_handle %}
+            {% assign match_handle = block.settings.match_title | handleize %}
+            {% if match_handle == child_handle %}
               {% assign mega_block = block %}
             {% endif %}
           {% endfor %}
