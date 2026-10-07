@@ -5267,7 +5267,7 @@
           "c1": {
             "type": "tile",
             "settings": {
-              "collection": "",
+              "collection": "dog",
               "url": "",
               "label": "Dog",
               "bg_color": "#e4ecf5"
@@ -5317,9 +5317,9 @@
           "cs1": {
             "type": "category",
             "settings": {
-              "collection": "",
+              "collection": "dog",
               "url": "",
-              "label": "Dog",
+              "label": "Dog Food",
               "fallback_color": "#e4ecf5"
             }
           },
@@ -5328,44 +5328,44 @@
             "settings": {
               "collection": "cat",
               "url": "",
-              "label": "Cat",
+              "label": "Cat Food",
               "fallback_color": "#f5ecd7"
             }
           },
           "cs3": {
             "type": "category",
             "settings": {
-              "collection": "",
+              "collection": "cat-vet-food",
               "url": "",
-              "label": "Small Pets",
+              "label": "Cat Wet Food",
               "fallback_color": "#e2f0ee"
+            }
+          },
+          "category_TEAMHt": {
+            "type": "category",
+            "settings": {
+              "collection": "birds-food",
+              "url": "",
+              "label": "",
+              "fallback_color": "#e4ecf5"
             }
           },
           "cs4": {
             "type": "category",
             "settings": {
-              "collection": "",
+              "collection": "fish-food",
               "url": "",
-              "label": "Birds",
+              "label": "",
               "fallback_color": "#dcecef"
             }
           },
           "cs5": {
             "type": "category",
             "settings": {
-              "collection": "",
+              "collection": "accessories",
               "url": "",
-              "label": "Fish & Aquatics",
+              "label": "",
               "fallback_color": "#dcefe7"
-            }
-          },
-          "cs6": {
-            "type": "category",
-            "settings": {
-              "collection": "",
-              "url": "",
-              "label": "Reptiles",
-              "fallback_color": "#e9edd9"
             }
           }
         },
@@ -5373,9 +5373,9 @@
           "cs1",
           "cs2",
           "cs3",
+          "category_TEAMHt",
           "cs4",
-          "cs5",
-          "cs6"
+          "cs5"
         ],
         "settings": {
           "heading": "Explore All Categories"
@@ -5385,14 +5385,14 @@
         "type": "furrwell-bestsellers-grid",
         "settings": {
           "heading": "Best Sellers",
-          "collection": "frontpage",
-          "limit": 4
+          "collection": "cat",
+          "limit": 8
         }
       },
       "furrwell-collection-spotlight": {
         "type": "furrwell-collection-spotlight",
         "settings": {
-          "collection": "",
+          "collection": "accessories",
           "eyebrow": "Featured Collection",
           "heading": "The Seasonal Wellness Edit",
           "text": "A curated set of food, supplements and comfort essentials our vets recommend for the season ahead.",
