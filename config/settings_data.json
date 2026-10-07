@@ -5163,6 +5163,9 @@
           "slide-1": {
             "type": "slide",
             "settings": {
+              "image": "shopify://shop_images/Banner_1600x600_9672f295-9adc-4201-89bd-851b0b0948ca.png",
+              "image_mobile": "shopify://shop_images/Banner_900x1000_be601842-9b34-4bd9-8b29-61360aa50bb2.png",
+              "link_url": "",
               "eyebrow": "Vet-Formulated. Owner-Trusted.",
               "heading": "Everything your pet needs, backed by real vets",
               "text": "Food, care essentials and wellness products selected with our veterinary team.",
@@ -5174,32 +5177,44 @@
           },
           "slide-2": {
             "type": "slide",
+            "disabled": true,
             "settings": {
+              "link_url": "",
               "eyebrow": "New Customers",
               "heading": "Save on your first order",
               "text": "Sign up today and get a welcome discount on your first purchase.",
               "button_label": "Shop Now",
-              "button_url": "/collections/all"
+              "button_url": "/collections/all",
+              "button2_label": "",
+              "button2_url": ""
             }
           },
           "slide-3": {
             "type": "slide",
+            "disabled": true,
             "settings": {
+              "link_url": "",
               "eyebrow": "Vet Services",
               "heading": "Book your pet's next check-up",
               "text": "Wellness exams, vaccinations, dental care and more.",
               "button_label": "Book Now",
-              "button_url": "/pages/contact"
+              "button_url": "/pages/contact",
+              "button2_label": "",
+              "button2_url": ""
             }
           },
           "slide-4": {
             "type": "slide",
+            "disabled": true,
             "settings": {
+              "link_url": "",
               "eyebrow": "New This Season",
               "heading": "Seasonal Wellness Collection",
               "text": "Curated picks for the season ahead, chosen by our vets.",
               "button_label": "Explore the Collection",
-              "button_url": "/collections/all"
+              "button_url": "/collections/all",
+              "button2_label": "",
+              "button2_url": ""
             }
           }
         },
@@ -5252,6 +5267,8 @@
           "c1": {
             "type": "tile",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Dog",
               "bg_color": "#e4ecf5"
             }
@@ -5260,6 +5277,7 @@
             "type": "tile",
             "settings": {
               "collection": "cat",
+              "url": "",
               "label": "Cat",
               "bg_color": "#f5ecd7"
             }
@@ -5267,6 +5285,8 @@
           "c3": {
             "type": "tile",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Small Pets",
               "bg_color": "#e2f0ee"
             }
@@ -5274,6 +5294,8 @@
           "c4": {
             "type": "tile",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Vet Services",
               "bg_color": "#f7e4da"
             }
@@ -5295,6 +5317,8 @@
           "cs1": {
             "type": "category",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Dog",
               "fallback_color": "#e4ecf5"
             }
@@ -5303,6 +5327,7 @@
             "type": "category",
             "settings": {
               "collection": "cat",
+              "url": "",
               "label": "Cat",
               "fallback_color": "#f5ecd7"
             }
@@ -5310,6 +5335,8 @@
           "cs3": {
             "type": "category",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Small Pets",
               "fallback_color": "#e2f0ee"
             }
@@ -5317,6 +5344,8 @@
           "cs4": {
             "type": "category",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Birds",
               "fallback_color": "#dcecef"
             }
@@ -5324,6 +5353,8 @@
           "cs5": {
             "type": "category",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Fish & Aquatics",
               "fallback_color": "#dcefe7"
             }
@@ -5331,6 +5362,8 @@
           "cs6": {
             "type": "category",
             "settings": {
+              "collection": "",
+              "url": "",
               "label": "Reptiles",
               "fallback_color": "#e9edd9"
             }
@@ -5359,10 +5392,12 @@
       "furrwell-collection-spotlight": {
         "type": "furrwell-collection-spotlight",
         "settings": {
+          "collection": "",
           "eyebrow": "Featured Collection",
           "heading": "The Seasonal Wellness Edit",
           "text": "A curated set of food, supplements and comfort essentials our vets recommend for the season ahead.",
-          "button_label": "Shop the Edit"
+          "button_label": "Shop the Edit",
+          "button_url": ""
         }
       },
       "furrwell-brands": {
@@ -5409,7 +5444,10 @@
       },
       "furrwell-team": {
         "type": "furrwell-team",
-        "settings": {}
+        "settings": {
+          "eyebrow": "Our Team",
+          "heading": "Meet the vets behind every recommendation"
+        }
       },
       "furrwell-testimonials": {
         "type": "furrwell-testimonials",
@@ -5417,19 +5455,25 @@
           "r1": {
             "type": "testimonial",
             "settings": {
-              "rating": 5
+              "rating": 5,
+              "quote": "",
+              "author": ""
             }
           },
           "r2": {
             "type": "testimonial",
             "settings": {
-              "rating": 5
+              "rating": 5,
+              "quote": "",
+              "author": ""
             }
           },
           "r3": {
             "type": "testimonial",
             "settings": {
-              "rating": 5
+              "rating": 5,
+              "quote": "",
+              "author": ""
             }
           }
         },
@@ -5438,18 +5482,25 @@
           "r2",
           "r3"
         ],
-        "settings": {}
+        "settings": {
+          "heading": "What pet owners say"
+        }
       },
       "furrwell-pet-care-tips": {
         "type": "furrwell-pet-care-tips",
         "settings": {
           "heading": "Pet Care Tips",
+          "blog": "",
           "limit": 3
         }
       },
       "furrwell-newsletter": {
         "type": "furrwell-newsletter",
-        "settings": {}
+        "settings": {
+          "heading": "Pet care tips, in your inbox",
+          "text": "Seasonal advice from our vets, plus new arrivals and offers.",
+          "button_label": "Sign Up"
+        }
       },
       "furrwell-site-header": {
         "type": "furrwell-site-header",
@@ -5462,6 +5513,8 @@
               "col2_heading": "Care & Gear",
               "promo_heading": "Vet-Approved",
               "promo_text": "Every product reviewed by our clinical team.",
+              "promo_link_label": "Shop now",
+              "promo_link_url": "",
               "promo_color": "brand"
             }
           },
@@ -5473,6 +5526,8 @@
               "col2_heading": "Care & Gear",
               "promo_heading": "Vet-Approved",
               "promo_text": "Every product reviewed by our clinical team.",
+              "promo_link_label": "Shop now",
+              "promo_link_url": "",
               "promo_color": "brand"
             }
           },
@@ -5484,6 +5539,8 @@
               "col2_heading": "",
               "promo_heading": "Talk to a Vet",
               "promo_text": "",
+              "promo_link_label": "Shop now",
+              "promo_link_url": "",
               "promo_color": "warm"
             }
           }
@@ -5499,6 +5556,7 @@
           "main_menu": "main-menu-1",
           "search_placeholder": "Search food, toys, vet services...",
           "announcement_text": "Free delivery on qualifying orders",
+          "track_order_url": "",
           "track_order_label": "Track Order",
           "contact_url": "/pages/contact",
           "contact_label": "Contact Us"
@@ -5527,7 +5585,14 @@
           "fc2"
         ],
         "settings": {
-          "brand_name": "FurrWell Vets Clinic"
+          "brand_name": "FurrWell Vets Clinic",
+          "address": "",
+          "phone": "",
+          "email": "",
+          "hours": "",
+          "instagram_url": "",
+          "facebook_url": "",
+          "tiktok_url": ""
         }
       }
     },
