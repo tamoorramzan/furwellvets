@@ -40,12 +40,16 @@
     }
   ],
   "max_blocks": 3,
-  "default": {
-    "blocks": [
-      { "type": "stat", "settings": { "number": "[X]+", "label": "Years in practice" } },
-      { "type": "stat", "settings": { "number": "[X]", "label": "Licensed vets" } },
-      { "type": "stat", "settings": { "number": "[X]k+", "label": "Pets cared for" } }
-    ]
-  }
+  "presets": [
+    {
+      "name": "FurrWell Credibility",
+      "category": "HOME PAGE",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "[X]+", "label": "Years in practice" } },
+        { "type": "stat", "settings": { "number": "[X]", "label": "Licensed vets" } },
+        { "type": "stat", "settings": { "number": "[X]k+", "label": "Pets cared for" } }
+      ]
+    }
+  ]
 }
 {% endschema %}
