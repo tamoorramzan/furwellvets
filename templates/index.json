@@ -1,0 +1,363 @@
+{
+  "sections": {
+    "furrwell-banner-slider": {
+      "type": "furrwell-banner-slider",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Banner_1600x600_9672f295-9adc-4201-89bd-851b0b0948ca.png",
+            "image_mobile": "shopify://shop_images/Banner_900x1000_be601842-9b34-4bd9-8b29-61360aa50bb2.png",
+            "link_url": "",
+            "eyebrow": "Vet-Formulated. Owner-Trusted.",
+            "heading": "Everything your pet needs, backed by real vets",
+            "text": "Food, care essentials and wellness products selected with our veterinary team.",
+            "button_label": "Shop Best Sellers",
+            "button_url": "/collections/all",
+            "button2_label": "Book a Vet Visit",
+            "button2_url": "/pages/contact"
+          }
+        },
+        "slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "link_url": "",
+            "eyebrow": "New Customers",
+            "heading": "Save on your first order",
+            "text": "Sign up today and get a welcome discount on your first purchase.",
+            "button_label": "Shop Now",
+            "button_url": "/collections/all",
+            "button2_label": "",
+            "button2_url": ""
+          }
+        },
+        "slide-3": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "link_url": "",
+            "eyebrow": "Vet Services",
+            "heading": "Book your pet's next check-up",
+            "text": "Wellness exams, vaccinations, dental care and more.",
+            "button_label": "Book Now",
+            "button_url": "/pages/contact",
+            "button2_label": "",
+            "button2_url": ""
+          }
+        },
+        "slide-4": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "link_url": "",
+            "eyebrow": "New This Season",
+            "heading": "Seasonal Wellness Collection",
+            "text": "Curated picks for the season ahead, chosen by our vets.",
+            "button_label": "Explore the Collection",
+            "button_url": "/collections/all",
+            "button2_label": "",
+            "button2_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide-1",
+        "slide-2",
+        "slide-3",
+        "slide-4"
+      ],
+      "settings": {}
+    },
+    "furrwell-trust-strip": {
+      "type": "furrwell-trust-strip",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon_bg": "#f0ece0",
+            "heading": "Free Delivery",
+            "text": "On qualifying orders"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon_bg": "#e2f0ee",
+            "heading": "Vet-Formulated",
+            "text": "Reviewed by our clinicians"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon_bg": "#e4ecf5",
+            "heading": "Easy Returns",
+            "text": "30-day return window"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {}
+    },
+    "furrwell-quick-categories": {
+      "type": "furrwell-quick-categories",
+      "blocks": {
+        "c1": {
+          "type": "tile",
+          "settings": {
+            "collection": "dog",
+            "url": "",
+            "label": "Dog",
+            "bg_color": "#e4ecf5"
+          }
+        },
+        "c2": {
+          "type": "tile",
+          "settings": {
+            "collection": "cat",
+            "url": "",
+            "label": "Cat",
+            "bg_color": "#f5ecd7"
+          }
+        },
+        "c3": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "label": "Small Pets",
+            "bg_color": "#e2f0ee"
+          }
+        },
+        "c4": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "label": "Vet Services",
+            "bg_color": "#f7e4da"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "heading": "Shop by Pet"
+      }
+    },
+    "furrwell-category-slider": {
+      "type": "furrwell-category-slider",
+      "blocks": {
+        "cs1": {
+          "type": "category",
+          "settings": {
+            "collection": "dog",
+            "url": "",
+            "label": "Dog Food",
+            "fallback_color": "#e4ecf5"
+          }
+        },
+        "cs2": {
+          "type": "category",
+          "settings": {
+            "collection": "cat",
+            "url": "",
+            "label": "Cat Food",
+            "fallback_color": "#f5ecd7"
+          }
+        },
+        "cs3": {
+          "type": "category",
+          "settings": {
+            "collection": "cat-vet-food",
+            "url": "",
+            "label": "Cat Wet Food",
+            "fallback_color": "#e2f0ee"
+          }
+        },
+        "category_TEAMHt": {
+          "type": "category",
+          "settings": {
+            "collection": "birds-food",
+            "url": "",
+            "label": "",
+            "fallback_color": "#e4ecf5"
+          }
+        },
+        "cs4": {
+          "type": "category",
+          "settings": {
+            "collection": "fish-food",
+            "url": "",
+            "label": "",
+            "fallback_color": "#dcecef"
+          }
+        },
+        "cs5": {
+          "type": "category",
+          "settings": {
+            "collection": "accessories",
+            "url": "",
+            "label": "",
+            "fallback_color": "#dcefe7"
+          }
+        }
+      },
+      "block_order": [
+        "cs1",
+        "cs2",
+        "cs3",
+        "category_TEAMHt",
+        "cs4",
+        "cs5"
+      ],
+      "settings": {
+        "heading": "Explore All Categories"
+      }
+    },
+    "furrwell-bestsellers-grid": {
+      "type": "furrwell-bestsellers-grid",
+      "settings": {
+        "heading": "Best Sellers",
+        "collection": "cat",
+        "limit": 8
+      }
+    },
+    "furrwell-collection-spotlight": {
+      "type": "furrwell-collection-spotlight",
+      "settings": {
+        "collection": "accessories",
+        "eyebrow": "Featured Collection",
+        "heading": "The Seasonal Wellness Edit",
+        "text": "A curated set of food, supplements and comfort essentials our vets recommend for the season ahead.",
+        "button_label": "Shop the Edit",
+        "button_url": ""
+      }
+    },
+    "furrwell-brands": {
+      "type": "furrwell-brands",
+      "settings": {
+        "heading": "Brands We Carry"
+      }
+    },
+    "furrwell-credibility": {
+      "type": "furrwell-credibility",
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "number": "[X]+",
+            "label": "Years in practice"
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "number": "[X]",
+            "label": "Licensed vets"
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "number": "[X]k+",
+            "label": "Pets cared for"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Why pet owners trust us",
+        "heading": "Every product is reviewed by our own veterinary team",
+        "text": "FurrWell Vets Clinic is run by practicing veterinarians — we only stock what we'd recommend at the clinic."
+      }
+    },
+    "furrwell-team": {
+      "type": "furrwell-team",
+      "settings": {
+        "eyebrow": "Our Team",
+        "heading": "Meet the vets behind every recommendation"
+      }
+    },
+    "furrwell-testimonials": {
+      "type": "furrwell-testimonials",
+      "blocks": {
+        "r1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "",
+            "author": ""
+          }
+        },
+        "r2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "",
+            "author": ""
+          }
+        },
+        "r3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "heading": "What pet owners say"
+      }
+    },
+    "furrwell-pet-care-tips": {
+      "type": "furrwell-pet-care-tips",
+      "settings": {
+        "heading": "Pet Care Tips",
+        "blog": "",
+        "limit": 3
+      }
+    },
+    "furrwell-newsletter": {
+      "type": "furrwell-newsletter",
+      "settings": {
+        "heading": "Pet care tips, in your inbox",
+        "text": "Seasonal advice from our vets, plus new arrivals and offers.",
+        "button_label": "Sign Up"
+      }
+    }
+  },
+  "order": [
+    "furrwell-banner-slider",
+    "furrwell-trust-strip",
+    "furrwell-quick-categories",
+    "furrwell-category-slider",
+    "furrwell-bestsellers-grid",
+    "furrwell-collection-spotlight",
+    "furrwell-brands",
+    "furrwell-credibility",
+    "furrwell-team",
+    "furrwell-testimonials",
+    "furrwell-pet-care-tips",
+    "furrwell-newsletter"
+  ]
+}
