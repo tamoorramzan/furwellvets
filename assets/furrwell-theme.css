@@ -221,8 +221,9 @@
 .fw-info-icon { color: var(--fw-gold); display: inline-flex; }
 .fw-info-title { font-size: 15px; font-weight: 600; color: #fff; }
 .fw-info-card .fw-stat-label { line-height: 1.45; color: #e7e9ee; }
-.fw-wa-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: #25d366; color: #0b3d20; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; text-decoration: none; transition: background .2s ease; }
-.fw-wa-btn:hover { background: #1ebe5b; color: #0b3d20; }
+.fw-wa-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: #1b2c42; color: #fff; border: 1px solid rgba(231,184,77,.55); font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+.fw-wa-btn svg { color: var(--fw-gold); }
+.fw-wa-btn:hover { background: #142233; color: #fff; border-color: var(--fw-gold); }
 @media (max-width: 600px) { .fw-stats-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Meet the vets ---------- */
