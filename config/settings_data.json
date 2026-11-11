@@ -5405,7 +5405,7 @@
           "heading": "Book a Vet Appointment",
           "text": "From routine check-ups to expert advice, our qualified vets are here to keep your pet healthy and happy. Pick a time that suits you.",
           "button_label": "Book an Appointment",
-          "button_url": "/pages/contact",
+          "button_url": "/pages/contact#book-appointment",
           "icon_style": "stethoscope"
         }
       },
