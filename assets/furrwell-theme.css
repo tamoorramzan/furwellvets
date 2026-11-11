@@ -15,7 +15,7 @@
 .fw-scope button { font-family: 'Work Sans', system-ui, sans-serif; cursor: pointer; border: none; background: none; }
 .fw-brand-word { font-family: 'Baloo 2', system-ui, sans-serif; }
 
-.fw-wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+.fw-wrap { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
 @media (max-width: 989px) { .fw-wrap { padding: 0 20px; } }
 
 .fw-ph { color: #8a8a86; font-style: italic; }
