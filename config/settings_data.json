@@ -5233,8 +5233,8 @@
             "type": "item",
             "settings": {
               "icon_bg": "#f0ece0",
-              "heading": "Free Delivery",
-              "text": "On qualifying orders"
+              "heading": "Fast Delivery",
+              "text": "Right to your doorstep"
             }
           },
           "t2": {
@@ -5249,8 +5249,8 @@
             "type": "item",
             "settings": {
               "icon_bg": "#e4ecf5",
-              "heading": "Easy Returns",
-              "text": "30-day return window"
+              "heading": "Secure Checkout",
+              "text": "Safe, encrypted payments"
             }
           }
         },
