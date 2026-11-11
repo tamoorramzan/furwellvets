@@ -32,6 +32,8 @@
   padding: 13px 26px; border-radius: 28px;
   font-weight: 700; font-size: 15px; border: 2px solid #fff;
 }
+.fw-scope .fw-btn-secondary { color: #fff; transition: background .2s ease, color .2s ease; }
+.fw-scope .fw-btn-secondary:hover { background: #fff; color: var(--fw-navy); }
 .fw-eyebrow {
   text-transform: uppercase; letter-spacing: 0.1em;
   font-size: 12px; font-weight: 700; color: var(--fw-teal);
