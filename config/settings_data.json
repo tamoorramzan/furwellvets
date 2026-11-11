@@ -5474,34 +5474,69 @@
             "type": "testimonial",
             "settings": {
               "rating": 5,
-              "quote": "",
-              "author": ""
+              "quote": "I've had an amazing experience with FurrWell Vet Clinic. The entire team is incredibly caring, professional, and attentive. They treated my pet with so much love and patience, and took the time to explain everything clearly.",
+              "author": "Sameel M.",
+              "source": "Google review"
             }
           },
           "r2": {
             "type": "testimonial",
             "settings": {
               "rating": 5,
-              "quote": "",
-              "author": ""
+              "quote": "So far, good experience with Dr Shoaib. He knows his job well. Switched him after losing one of my kittens to another vet and now I feel my kitties are in safe hands.",
+              "author": "Ammara S.",
+              "source": "Google review"
             }
           },
           "r3": {
             "type": "testimonial",
             "settings": {
               "rating": 5,
-              "quote": "",
-              "author": ""
+              "quote": "Great service … my cat went through pyometra surgery … took cat with great care and helped her heal through the process. Best part they were supper friendly with cat and made sure she is in comfort zone despite she is a local breed.",
+              "author": "Aroosha B.",
+              "source": "Google review"
+            }
+          },
+          "r4": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "quote": "Since the day this clinic inaugurated i have been here regularly i am so happy with getting my cats neutered / spayed from here and all the cats supplies along with the diagnosis makes it so convenient.",
+              "author": "Ayesha K.",
+              "source": "Google review"
+            }
+          },
+          "r5": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "quote": "This is the best place for your pets! The doctors are caring, professional, and provide excellent treatments. I'm very happy with their service and highly recommend them to all pet owners.",
+              "author": "Honey M.",
+              "source": "Google review"
+            }
+          },
+          "r6": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "quote": "FurrWell Clinic is home to professional doctors and staff. Professional because they help you understand and explain the treatments for the owners to mentally prepare themselves.",
+              "author": "Khwaja M.",
+              "source": "Google review"
             }
           }
         },
         "block_order": [
           "r1",
           "r2",
-          "r3"
+          "r3",
+          "r4",
+          "r5",
+          "r6"
         ],
         "settings": {
-          "heading": "What pet owners say"
+          "heading": "What pet owners say",
+          "all_reviews_url": "",
+          "all_reviews_label": "See all reviews on Google"
         }
       },
       "furrwell-pet-care-tips": {
