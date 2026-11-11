@@ -8,13 +8,25 @@
       <div class="fw-quick-grid">
         {% for block in section.blocks %}
           {% assign coll = collections[block.settings.collection] %}
-          <a href="{% if coll %}{{ coll.url }}{% else %}{{ block.settings.url }}{% endif %}" class="fw-quick-tile" style="background:{{ block.settings.bg_color | default: '#eef1e8' }};" {{ block.shopify_attributes }}>
+          <a href="{% if coll %}{{ coll.url }}{% elsif block.settings.url != blank %}{{ block.settings.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" class="fw-quick-tile" style="background:{{ block.settings.bg_color | default: '#eef1e8' }};" {{ block.shopify_attributes }}>
             {% if block.settings.icon != blank %}
             <img src="{{ block.settings.icon | img_url: '80x' }}" alt="">
             {% else %}
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--fw-navy)" stroke-width="1.5"><path d="M4 16c0-4 3.5-9 8-9s8 5 8 9"/><circle cx="7" cy="8" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M4 20h16"/></svg>
+            {% render 'fw-pet-icon', icon: block.settings.icon_style %}
             {% endif %}
-            <h3>{{ block.settings.label | default: coll.title }}</h3>
+            <div>
+              <h3>{{ block.settings.label | default: coll.title }}</h3>
+              <p class="fw-quick-sub">
+                {%- if block.settings.subtitle != blank -%}
+                  {{ block.settings.subtitle }}
+                {%- elsif coll and coll.products_count > 0 -%}
+                  {{ coll.products_count }} {% if coll.products_count == 1 %}product{% else %}products{% endif %}
+                {%- else -%}
+                  Shop now
+                {%- endif -%}
+                <svg class="fw-quick-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg>
+              </p>
+            </div>
           </a>
         {% endfor %}
       </div>
@@ -36,7 +48,15 @@
         { "type": "collection", "id": "collection", "label": "Collection" },
         { "type": "url", "id": "url", "label": "Link (used if no collection selected)" },
         { "type": "text", "id": "label", "label": "Label override" },
-        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "select", "id": "icon_style", "label": "Icon", "default": "paw", "options": [
+          { "value": "dog", "label": "Dog" },
+          { "value": "cat", "label": "Cat" },
+          { "value": "fish", "label": "Fish" },
+          { "value": "stethoscope", "label": "Stethoscope (vet)" },
+          { "value": "paw", "label": "Paw" }
+        ] },
+        { "type": "image_picker", "id": "icon", "label": "Custom icon image", "info": "Replaces the icon above" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "info": "Leave empty to show the collection's product count" },
         { "type": "color", "id": "bg_color", "label": "Background color", "default": "#eef1e8" }
       ]
     }
@@ -44,10 +64,10 @@
   "max_blocks": 8,
   "default": {
     "blocks": [
-      { "type": "tile", "settings": { "label": "Dog", "bg_color": "#e4ecf5" } },
-      { "type": "tile", "settings": { "label": "Cat", "bg_color": "#f5ecd7" } },
-      { "type": "tile", "settings": { "label": "Small Pets", "bg_color": "#e2f0ee" } },
-      { "type": "tile", "settings": { "label": "Vet Services", "bg_color": "#f7e4da" } }
+      { "type": "tile", "settings": { "label": "Dog", "bg_color": "#e4ecf5", "icon_style": "dog" } },
+      { "type": "tile", "settings": { "label": "Cat", "bg_color": "#f5ecd7", "icon_style": "cat" } },
+      { "type": "tile", "settings": { "label": "Fish & Birds", "bg_color": "#e2f0ee", "icon_style": "fish" } },
+      { "type": "tile", "settings": { "label": "Vet Services", "bg_color": "#f7e4da", "icon_style": "stethoscope", "subtitle": "Book a visit" } }
     ]
   }
 }

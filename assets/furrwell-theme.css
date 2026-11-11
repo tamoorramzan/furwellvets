@@ -159,6 +159,11 @@
 .fw-quick-tile { border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px; text-align: left; }
 .fw-quick-tile img, .fw-quick-tile svg { width: 38px; height: 38px; object-fit: contain; }
 .fw-quick-tile h3 { font-size: 17px; font-weight: 600; font-family: 'Work Sans', sans-serif; color: #22242c; }
+.fw-quick-tile { transition: transform .2s ease, box-shadow .2s ease; }
+.fw-quick-tile:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(31,45,74,.08); }
+.fw-quick-sub { display: inline-flex; align-items: center; gap: 6px; margin: 4px 0 0; font-size: 13px; color: #5d6476; }
+.fw-quick-arrow { width: 14px !important; height: 14px !important; transition: transform .2s ease; }
+.fw-quick-tile:hover .fw-quick-arrow { transform: translateX(3px); }
 
 /* ---------- Category slider (image cards) ---------- */
 .fw-cat-slider { padding: 10px 0 76px; }

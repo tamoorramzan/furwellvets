@@ -5270,34 +5270,42 @@
               "collection": "dog",
               "url": "",
               "label": "Dog",
-              "bg_color": "#e4ecf5"
+              "bg_color": "#e4ecf5",
+              "icon_style": "dog",
+              "subtitle": ""
             }
           },
           "c2": {
             "type": "tile",
             "settings": {
-              "collection": "cat",
+              "collection": "cat-litter",
               "url": "",
               "label": "Cat",
-              "bg_color": "#f5ecd7"
+              "bg_color": "#f5ecd7",
+              "icon_style": "cat",
+              "subtitle": ""
             }
           },
           "c3": {
             "type": "tile",
             "settings": {
-              "collection": "",
+              "collection": "fish-food",
               "url": "",
-              "label": "Small Pets",
-              "bg_color": "#e2f0ee"
+              "label": "Fish & Birds",
+              "bg_color": "#e2f0ee",
+              "icon_style": "fish",
+              "subtitle": ""
             }
           },
           "c4": {
             "type": "tile",
             "settings": {
               "collection": "",
-              "url": "",
+              "url": "/pages/contact",
               "label": "Vet Services",
-              "bg_color": "#f7e4da"
+              "bg_color": "#f7e4da",
+              "icon_style": "stethoscope",
+              "subtitle": "Book a visit"
             }
           }
         },
