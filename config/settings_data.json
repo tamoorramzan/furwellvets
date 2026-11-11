@@ -5270,9 +5270,9 @@
               "collection": "dog",
               "url": "",
               "label": "Dog",
-              "bg_color": "#e4ecf5",
               "icon_style": "dog",
-              "subtitle": ""
+              "subtitle": "",
+              "bg_color": "#e4ecf5"
             }
           },
           "c2": {
@@ -5281,9 +5281,9 @@
               "collection": "cat-litter",
               "url": "",
               "label": "Cat",
-              "bg_color": "#f5ecd7",
               "icon_style": "cat",
-              "subtitle": ""
+              "subtitle": "",
+              "bg_color": "#f5ecd7"
             }
           },
           "c3": {
@@ -5292,9 +5292,9 @@
               "collection": "fish-food",
               "url": "",
               "label": "Fish & Birds",
-              "bg_color": "#e2f0ee",
               "icon_style": "fish",
-              "subtitle": ""
+              "subtitle": "",
+              "bg_color": "#e2f0ee"
             }
           },
           "c4": {
@@ -5303,9 +5303,9 @@
               "collection": "",
               "url": "/pages/contact",
               "label": "Vet Services",
-              "bg_color": "#f7e4da",
               "icon_style": "stethoscope",
-              "subtitle": "Book a visit"
+              "subtitle": "Book a visit",
+              "bg_color": "#f7e4da"
             }
           }
         },
@@ -5393,7 +5393,7 @@
         "type": "furrwell-bestsellers-grid",
         "settings": {
           "heading": "Best Sellers",
-          "collection": "cat",
+          "collection": "best-seller",
           "limit": 8
         }
       },
