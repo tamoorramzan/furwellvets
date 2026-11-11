@@ -5400,12 +5400,13 @@
       "furrwell-collection-spotlight": {
         "type": "furrwell-collection-spotlight",
         "settings": {
-          "collection": "accessories",
-          "eyebrow": "Featured Collection",
-          "heading": "The Seasonal Wellness Edit",
-          "text": "A curated set of food, supplements and comfort essentials our vets recommend for the season ahead.",
-          "button_label": "Shop the Edit",
-          "button_url": ""
+          "collection": "",
+          "eyebrow": "FurrWell Vets Clinic",
+          "heading": "Book a Vet Appointment",
+          "text": "From routine check-ups to expert advice, our qualified vets are here to keep your pet healthy and happy. Pick a time that suits you.",
+          "button_label": "Book an Appointment",
+          "button_url": "/pages/contact",
+          "icon_style": "stethoscope"
         }
       },
       "furrwell-brands": {
