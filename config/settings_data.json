@@ -5462,6 +5462,18 @@
       },
       "furrwell-team": {
         "type": "furrwell-team",
+        "blocks": {
+          "vet_xzHVr7": {
+            "type": "vet",
+            "settings": {
+              "name": "",
+              "role": "Veterinarian, DVM"
+            }
+          }
+        },
+        "block_order": [
+          "vet_xzHVr7"
+        ],
         "settings": {
           "eyebrow": "Our Team",
           "heading": "Meet the vets behind every recommendation"
@@ -5646,6 +5658,24 @@
           "instagram_url": "",
           "facebook_url": "",
           "tiktok_url": ""
+        }
+      },
+      "furrwell-appointment-popup": {
+        "type": "furrwell-appointment-popup",
+        "settings": {
+          "title_before": "I want to book an",
+          "title_highlight": "appointment",
+          "title_after": "for",
+          "online_title": "Online Consultation",
+          "online_text": "Anywhere in the world",
+          "online_note": "Our vet will contact you on WhatsApp to confirm the time of your call.",
+          "physical_title": "Physical Exam",
+          "physical_text": "Currently available in Lahore, Pakistan",
+          "physical_note": "Visit us at Plot 126, Block D2, WAPDA Town, Lahore. We'll confirm your appointment on WhatsApp.",
+          "browse_label": "Neither, just browsing",
+          "submit_label": "Request appointment",
+          "success_title": "Request received",
+          "success_text": "Thank you! Our team will contact you on WhatsApp shortly to confirm your appointment."
         }
       }
     },
