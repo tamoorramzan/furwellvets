@@ -5419,24 +5419,30 @@
         "type": "furrwell-credibility",
         "blocks": {
           "s1": {
-            "type": "stat",
+            "type": "info",
             "settings": {
-              "number": "[X]+",
-              "label": "Years in practice"
+              "icon": "pin",
+              "title": "Visit us",
+              "text": "Plot 126, Block D2, WAPDA Town, Lahore",
+              "link": "map"
             }
           },
           "s2": {
-            "type": "stat",
+            "type": "info",
             "settings": {
-              "number": "[X]",
-              "label": "Licensed vets"
+              "icon": "phone",
+              "title": "WhatsApp",
+              "text": "+92 326 8828918",
+              "link": "whatsapp"
             }
           },
           "s3": {
-            "type": "stat",
+            "type": "info",
             "settings": {
-              "number": "[X]k+",
-              "label": "Pets cared for"
+              "icon": "calendar",
+              "title": "Book a visit",
+              "text": "Message us to book",
+              "link": "whatsapp"
             }
           }
         },
@@ -5446,9 +5452,12 @@
           "s3"
         ],
         "settings": {
-          "eyebrow": "Why pet owners trust us",
-          "heading": "Every product is reviewed by our own veterinary team",
-          "text": "FurrWell Vets Clinic is run by practicing veterinarians — we only stock what we'd recommend at the clinic."
+          "eyebrow": "Our clinic",
+          "heading": "Meet FurrWell Vets Clinic",
+          "text": "FurrWell Vets Clinic is a veterinary practice in WAPDA Town, Lahore, caring for dogs, cats and other pets with check-ups, treatment and friendly advice. Have a question or want to book a visit? Message us on WhatsApp.",
+          "whatsapp_number": "+923268828918",
+          "whatsapp_message": "Hi FurrWell Vets Clinic, I'd like to book an appointment.",
+          "button_label": "Chat on WhatsApp"
         }
       },
       "furrwell-team": {

@@ -216,6 +216,14 @@
 .fw-stat { background: rgba(255,255,255,.12); border-radius: 12px; padding: 20px 14px; text-align: center; }
 .fw-stat .fw-stat-num { font-family: 'Newsreader', serif; font-size: 28px; color: var(--fw-gold); }
 .fw-stat .fw-stat-label { font-size: 12px; color: #fff; margin-top: 4px; }
+.fw-info-card { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #fff; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.fw-info-card:hover { background: rgba(255,255,255,.2); transform: translateY(-3px); }
+.fw-info-icon { color: var(--fw-gold); display: inline-flex; }
+.fw-info-title { font-size: 15px; font-weight: 600; color: #fff; }
+.fw-info-card .fw-stat-label { line-height: 1.45; color: #e7e9ee; }
+.fw-wa-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: #25d366; color: #0b3d20; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; text-decoration: none; transition: background .2s ease; }
+.fw-wa-btn:hover { background: #1ebe5b; color: #0b3d20; }
+@media (max-width: 600px) { .fw-stats-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Meet the vets ---------- */
 .fw-team { padding: 76px 0; }
