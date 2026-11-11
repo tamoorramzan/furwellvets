@@ -5463,15 +5463,31 @@
       "furrwell-team": {
         "type": "furrwell-team",
         "blocks": {
+          "vet_YA9d7c": {
+            "type": "vet",
+            "settings": {
+              "name": "Dr Rehal",
+              "role": "Veterinarian, DVM"
+            }
+          },
+          "vet_yJ9Qyk": {
+            "type": "vet",
+            "settings": {
+              "name": "Dr Muhammad Shoaib",
+              "role": "Veterinarian, DVM"
+            }
+          },
           "vet_xzHVr7": {
             "type": "vet",
             "settings": {
-              "name": "",
-              "role": "Veterinarian, DVM"
+              "name": "Dr Sohail Idrees",
+              "role": "Veterinarian, DVM, MRCVS (UK)"
             }
           }
         },
         "block_order": [
+          "vet_YA9d7c",
+          "vet_yJ9Qyk",
           "vet_xzHVr7"
         ],
         "settings": {
