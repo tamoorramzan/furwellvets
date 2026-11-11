@@ -3,7 +3,9 @@
   {% assign coll = collections[section.settings.collection] %}
   <section class="fw-feature-banner">
     <div class="fw-wrap">
-      <div class="fw-feature-inner">
+      {%- assign fw_opens_booking = false -%}
+      {%- if coll == blank and section.settings.button_url contains '#book-appointment' -%}{%- assign fw_opens_booking = true -%}{%- endif -%}
+      <div class="fw-feature-inner{% if fw_opens_booking %} fw-feature-inner--clickable{% endif %}"{% if fw_opens_booking %} data-fw-book role="button" tabindex="0" aria-label="{{ section.settings.button_label | escape }}"{% endif %}>
         <div class="fw-feature-copy">
           {% if section.settings.eyebrow != blank %}<span class="fw-eyebrow" style="color:var(--fw-gold);">{{ section.settings.eyebrow }}</span>{% endif %}
           <h2>{{ section.settings.heading | default: coll.title }}</h2>
@@ -34,6 +36,10 @@
     </div>
   </section>
 </div>
+<style>
+  .fw-feature-inner--clickable { cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+  .fw-feature-inner--clickable:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(20,28,40,.18); }
+</style>
 
 {% schema %}
 {

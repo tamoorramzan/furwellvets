@@ -204,7 +204,10 @@
     if (e.target.closest('[data-fw-appt-back]')) { show('choose'); return; }
     if (e.target.closest('[data-fw-appt-close]')) { close(); }
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !root.hidden) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !root.hidden) { close(); return; }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-fw-book]')) { e.preventDefault(); open('choose'); }
+  });
 
   var saved = null; try { saved = sessionStorage.getItem('fwApptType'); } catch (err) {}
   setType(saved === 'physical' ? 'physical' : 'online');
