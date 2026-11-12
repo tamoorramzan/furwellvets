@@ -5262,6 +5262,17 @@
       "furrwell-quick-categories": {
         "type": "furrwell-quick-categories",
         "blocks": {
+          "tile_Ga8hRj": {
+            "type": "tile",
+            "settings": {
+              "collection": "",
+              "url": "",
+              "label": "",
+              "icon_style": "paw",
+              "subtitle": "",
+              "bg_color": "#eef1e8"
+            }
+          },
           "c1": {
             "type": "tile",
             "settings": {
@@ -5288,8 +5299,8 @@
             "type": "tile",
             "settings": {
               "collection": "fish-food",
-              "url": "",
-              "label": "Fish & Birds",
+              "url": "shopify://collections/fish-food",
+              "label": "Fish",
               "icon_style": "fish",
               "subtitle": "",
               "bg_color": "#e2f0ee"
@@ -5308,6 +5319,7 @@
           }
         },
         "block_order": [
+          "tile_Ga8hRj",
           "c1",
           "c2",
           "c3",
