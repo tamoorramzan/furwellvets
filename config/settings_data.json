@@ -5352,7 +5352,7 @@
             "settings": {
               "collection": "dog-treats",
               "url": "shopify://collections/dog-treats",
-              "label": "Dog Food",
+              "label": "Dog Treats",
               "fallback_color": "#e4ecf5"
             }
           },
