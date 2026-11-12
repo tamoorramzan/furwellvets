@@ -5410,6 +5410,20 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_4WwtiA": {
+            "type": "brand",
+            "settings": {
+              "name": "Nutripaw",
+              "url": ""
+            }
+          },
+          "brand_yJb4pn": {
+            "type": "brand",
+            "settings": {
+              "name": "Nosh",
+              "url": ""
+            }
+          },
           "brand_xFeKNB": {
             "type": "brand",
             "settings": {
@@ -5440,6 +5454,8 @@
           }
         },
         "block_order": [
+          "brand_4WwtiA",
+          "brand_yJb4pn",
           "brand_xFeKNB",
           "brand_njAbBy",
           "brand_DQ6cfR",
