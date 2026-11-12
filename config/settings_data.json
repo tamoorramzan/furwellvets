@@ -5262,17 +5262,6 @@
       "furrwell-quick-categories": {
         "type": "furrwell-quick-categories",
         "blocks": {
-          "tile_Ga8hRj": {
-            "type": "tile",
-            "settings": {
-              "collection": "birds-food",
-              "url": "shopify://collections/birds-food",
-              "label": "",
-              "icon_style": "paw",
-              "subtitle": "",
-              "bg_color": "#eef1e8"
-            }
-          },
           "c1": {
             "type": "tile",
             "settings": {
@@ -5295,6 +5284,17 @@
               "bg_color": "#f5ecd7"
             }
           },
+          "tile_Ga8hRj": {
+            "type": "tile",
+            "settings": {
+              "collection": "birds-food",
+              "url": "shopify://collections/birds-food",
+              "label": "",
+              "icon_style": "paw",
+              "subtitle": "",
+              "bg_color": "#eef1e8"
+            }
+          },
           "c3": {
             "type": "tile",
             "settings": {
@@ -5305,25 +5305,13 @@
               "subtitle": "",
               "bg_color": "#e2f0ee"
             }
-          },
-          "c4": {
-            "type": "tile",
-            "settings": {
-              "collection": "",
-              "url": "/pages/contact",
-              "label": "Vet Services",
-              "icon_style": "stethoscope",
-              "subtitle": "Book a visit",
-              "bg_color": "#f7e4da"
-            }
           }
         },
         "block_order": [
-          "tile_Ga8hRj",
           "c1",
           "c2",
-          "c3",
-          "c4"
+          "tile_Ga8hRj",
+          "c3"
         ],
         "settings": {
           "heading": "Shop by Pet"
@@ -5332,6 +5320,15 @@
       "furrwell-category-slider": {
         "type": "furrwell-category-slider",
         "blocks": {
+          "category_KJnXU3": {
+            "type": "category",
+            "settings": {
+              "collection": "dog-dry-food",
+              "url": "shopify://collections/dog-dry-food",
+              "label": "",
+              "fallback_color": "#e4ecf5"
+            }
+          },
           "cs1": {
             "type": "category",
             "settings": {
@@ -5389,6 +5386,7 @@
           }
         },
         "block_order": [
+          "category_KJnXU3",
           "cs1",
           "cs2",
           "cs3",
