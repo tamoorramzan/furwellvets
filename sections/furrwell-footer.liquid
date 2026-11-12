@@ -1,54 +1,197 @@
 <!-- /sections/furrwell-footer.liquid -->
+{%- liquid
+  assign brand = section.settings.brand_name | default: shop.name
+  assign wa_number = section.settings.whatsapp | remove: '+' | remove: ' ' | remove: '-'
+  assign tel_number = section.settings.phone | remove: ' ' | remove: '-'
+-%}
 <div class="fw-scope">
   <footer class="fw-footer">
     <div class="fw-wrap fw-footer-top">
-      <div class="fw-footer-brand">
-        <span class="fw-brand-word">{{ section.settings.brand_name | default: shop.name }}</span>
-        {% if section.settings.address != blank %}<p style="font-size:13px;max-width:250px;">{{ section.settings.address }}</p>{% endif %}
-        {% if section.settings.phone != blank or section.settings.email != blank %}
-        <p style="font-size:13px;">{{ section.settings.phone }}{% if section.settings.phone != blank and section.settings.email != blank %} &middot; {% endif %}{{ section.settings.email }}</p>
-        {% endif %}
-        {% if section.settings.hours != blank %}<p style="font-size:13px;">{{ section.settings.hours }}</p>{% endif %}
+
+      <div class="fw-footer-left">
+        <div class="fw-footer-brand">
+          <a href="{{ routes.root_url }}" class="fw-footer-logo">
+            <span class="fw-footer-logo-mark" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 34 34"><path d="M17 27c-6.2-4.4-12.4-8.8-12.4-14.6C4.6 7.7 8 4.4 12 4.4c2.2 0 4.1 1 5 2.6V27Z" fill="#4C9C97"/><path d="M17 27c6.2-4.4 12.4-8.8 12.4-14.6 0-4.7-3.4-8-7.4-8-2.2 0-4.1 1-5 2.6V27Z" fill="#E7B84D"/></svg>
+            </span>
+            <span class="fw-footer-logo-text">
+              <span class="fw-brand-word">{{ brand }}</span>
+              {% if section.settings.tagline != blank %}<span class="fw-footer-tag">{{ section.settings.tagline }}</span>{% endif %}
+            </span>
+          </a>
+          {% if section.settings.about != blank %}<p class="fw-footer-about">{{ section.settings.about }}</p>{% endif %}
+          <div class="fw-footer-social">
+            {% if section.settings.instagram_url != blank %}
+            <a href="{{ section.settings.instagram_url }}" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            {% endif %}
+            {% if section.settings.facebook_url != blank %}
+            <a href="{{ section.settings.facebook_url }}" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V6a2 2 0 0 1 2-2h2V1h-3a4 4 0 0 0-4 4v4H8v3h3v9h4v-9h3l1-3h-4Z"/></svg></a>
+            {% endif %}
+            {% if section.settings.tiktok_url != blank %}
+            <a href="{{ section.settings.tiktok_url }}" aria-label="TikTok" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3c.5 3 2.5 5 5.5 5.3V12c-2-.1-3.8-.8-5.5-2v6.6a6 6 0 1 1-6-6.6c.3 0 .7 0 1 .1V13a2.6 2.6 0 1 0 2 2.6V3Z"/></svg></a>
+            {% endif %}
+            {% if wa_number != blank %}
+            <a href="https://wa.me/{{ wa_number }}" aria-label="WhatsApp" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23s8.23 3.69 8.23 8.23-3.69 8.22-8.23 8.22z"/></svg></a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="fw-footer-menus">
+          {%- if section.settings.menu != blank -%}
+            {%- for link in linklists[section.settings.menu].links -%}
+            <div class="fw-footer-col">
+              <a href="{{ link.url }}" class="fw-footer-heading">{{ link.title }}</a>
+              {%- for sublink in link.links -%}
+              <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+              {%- endfor -%}
+            </div>
+            {%- endfor -%}
+          {%- endif -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'link_column' and block.settings.menu != blank -%}
+            <div class="fw-footer-col" {{ block.shopify_attributes }}>
+              <span class="fw-footer-heading">{{ block.settings.heading }}</span>
+              {%- for link in linklists[block.settings.menu].links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+              {%- endfor -%}
+            </div>
+            {%- endif -%}
+          {%- endfor -%}
+          <div class="fw-footer-col">
+            <span class="fw-footer-heading">{{ section.settings.quick_heading }}</span>
+            <a href="{{ routes.root_url }}">Home</a>
+            <a href="/pages/gallery">Clinic Gallery</a>
+            <a href="/pages/contact#book-appointment">Book an Appointment</a>
+            <a href="/pages/contact">Contact Us</a>
+            {%- if shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>{%- endif -%}
+          </div>
+        </div>
       </div>
 
-      {% for block in section.blocks %}
-        {% if block.type == 'link_column' %}
-        <div class="fw-footer-col" {{ block.shopify_attributes }}>
-          <span class="fw-footer-heading">{{ block.settings.heading }}</span>
-          {% for link in linklists[block.settings.menu].links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endfor %}
+      <div class="fw-footer-contact">
+        <span class="fw-footer-heading fw-footer-heading--lg">{{ section.settings.contact_heading }}</span>
+        <ul class="fw-contact-list">
+          {% if section.settings.address != blank %}
+          <li>
+            <span class="fw-contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <span><small>Our clinic</small><a href="https://www.google.com/maps/search/?api=1&query={{ section.settings.address | url_encode | replace: '+', '%20' }}" target="_blank" rel="noopener">{{ section.settings.address }}</a></span>
+          </li>
+          {% endif %}
+          {% if section.settings.email != blank %}
+          <li>
+            <span class="fw-contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span><small>Email</small><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></span>
+          </li>
+          {% endif %}
+          {% if section.settings.phone != blank %}
+          <li>
+            <span class="fw-contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span><small>Call / WhatsApp</small><a href="tel:{{ tel_number }}">{{ section.settings.phone }}</a></span>
+          </li>
+          {% endif %}
+          {% if section.settings.hours != blank %}
+          <li>
+            <span class="fw-contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <span><small>Opening hours</small>{{ section.settings.hours }}</span>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="fw-footer-ctas">
+          {% if wa_number != blank %}
+          <a href="https://wa.me/{{ wa_number }}" class="fw-footer-btn fw-footer-btn--wa" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm4.52 11.97c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+            Chat on WhatsApp
+          </a>
+          {% endif %}
+          <a href="/pages/contact#book-appointment" class="fw-footer-btn fw-footer-btn--book">Book an Appointment</a>
         </div>
-        {% endif %}
-      {% endfor %}
+      </div>
     </div>
 
     <div class="fw-wrap fw-footer-bottom">
-      <span class="fw-ph" style="color:#8a8a90;">&copy; {{ 'now' | date: '%Y' }} {{ section.settings.brand_name | default: shop.name }}. All rights reserved.</span>
-      <div class="fw-footer-social">
-        {% if section.settings.instagram_url != blank %}
-        <a href="{{ section.settings.instagram_url }}" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        {% endif %}
-        {% if section.settings.facebook_url != blank %}
-        <a href="{{ section.settings.facebook_url }}" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V6a2 2 0 0 1 2-2h2V1h-3a4 4 0 0 0-4 4v4H8v3h3v9h4v-9h3l1-3h-4Z"/></svg></a>
-        {% endif %}
-        {% if section.settings.tiktok_url != blank %}
-        <a href="{{ section.settings.tiktok_url }}" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3c.5 3 2.5 5 5.5 5.3V12c-2-.1-3.8-.8-5.5-2v6.6a6 6 0 1 1-6-6.6c.3 0 .7 0 1 .1V13a2.6 2.6 0 1 0 2 2.6V3Z"/></svg></a>
-        {% endif %}
+      <span class="fw-footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | default: brand }}. All rights reserved.</span>
+      <div class="fw-footer-legal">
+        {%- if shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>{%- endif -%}
+        {%- if shop.refund_policy -%}<a href="{{ shop.refund_policy.url }}">Refund Policy</a>{%- endif -%}
+        {%- if shop.shipping_policy -%}<a href="{{ shop.shipping_policy.url }}">Shipping Policy</a>{%- endif -%}
+        {%- if shop.terms_of_service -%}<a href="{{ shop.terms_of_service.url }}">Terms of Service</a>{%- endif -%}
       </div>
     </div>
   </footer>
 </div>
 
+<style>
+  .fw-footer { background: #17181c; padding: 64px 0 26px; color: #b9bac0; }
+  .fw-footer-top { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .fw-footer-left { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 44px; }
+  .fw-footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .fw-scope .fw-footer-logo { display: flex; align-items: center; gap: 12px; color: #fff; }
+  .fw-footer-logo-mark { width: 44px; height: 44px; border-radius: 50%; background: #0f1013; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,.08); }
+  .fw-footer-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .fw-footer-logo-text .fw-brand-word { font-size: 19px; font-weight: 700; color: #fff; }
+  .fw-footer-tag { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--fw-gold); font-weight: 600; margin-top: 3px; }
+  .fw-footer-about { font-size: 13.5px; line-height: 1.65; color: #9fa1a8; margin: 0; }
+  .fw-footer-social { display: flex; gap: 10px; }
+  .fw-scope .fw-footer-social a { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.06); color: #d6d7dc; transition: background .2s, color .2s; }
+  .fw-scope .fw-footer-social a:hover { background: var(--fw-gold); color: #17181c; }
+  .fw-footer-menus { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 32px 24px; }
+  .fw-footer-col { display: flex; flex-direction: column; gap: 10px; }
+  .fw-scope .fw-footer-heading { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; letter-spacing: .01em; }
+  .fw-footer-heading--lg { font-size: 16px !important; margin-bottom: 18px !important; display: block; }
+  .fw-scope .fw-footer-col a { font-size: 13.5px; color: #b9bac0; transition: color .2s; }
+  .fw-scope .fw-footer-col a.fw-footer-heading { font-size: 14px; font-weight: 700; color: #fff; }
+  .fw-scope .fw-footer-col a:hover, .fw-scope .fw-footer-col a.fw-footer-heading:hover { color: var(--fw-gold); }
+  .fw-footer-contact { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 26px 26px 24px; align-self: start; }
+  .fw-contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  .fw-contact-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 14px; color: #e7e9ee; line-height: 1.5; }
+  .fw-contact-list small { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em; color: #8a8c93; margin-bottom: 2px; }
+  .fw-scope .fw-contact-list a { color: #e7e9ee; word-break: break-word; }
+  .fw-scope .fw-contact-list a:hover { color: var(--fw-gold); }
+  .fw-contact-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(231,184,77,.12); color: var(--fw-gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .fw-footer-ctas { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
+  .fw-scope .fw-footer-btn { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 12px 18px; border-radius: 999px; transition: background .2s, color .2s; }
+  .fw-scope .fw-footer-btn--wa { background: #0f3d24; color: #fff; border: 1px solid rgba(255,255,255,.2); }
+  .fw-scope .fw-footer-btn--wa svg { color: #4ade80; }
+  .fw-scope .fw-footer-btn--wa:hover { background: #0a2e1a; color: #fff; }
+  .fw-scope .fw-footer-btn--book { background: var(--fw-gold); color: #22242c; }
+  .fw-scope .fw-footer-btn--book:hover { background: #f0c662; color: #22242c; }
+  .fw-footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; flex-wrap: wrap; gap: 12px; }
+  .fw-footer-copy { font-size: 13px; color: #8a8c93; }
+  .fw-footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+  .fw-scope .fw-footer-legal a { font-size: 13px; color: #8a8c93; }
+  .fw-scope .fw-footer-legal a:hover { color: #fff; }
+  @media (max-width: 1100px) {
+    .fw-footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .fw-footer-contact { max-width: 520px; }
+  }
+  @media (max-width: 760px) {
+    .fw-footer { padding-top: 48px; }
+    .fw-footer-left { grid-template-columns: 1fr; gap: 36px; }
+    .fw-footer-menus { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .fw-footer-contact { max-width: none; }
+    .fw-footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
 {% schema %}
 {
   "name": "FurrWell Footer",
   "settings": [
-    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "FurrWell Vets Clinic" },
+    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "FurrWell Pets Mart" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "& Vets Clinic" },
+    { "type": "textarea", "id": "about", "label": "Short description" },
+    { "type": "header", "content": "Menus" },
+    { "type": "link_list", "id": "menu", "label": "Main menu", "info": "Each top-level item becomes a column with its sub-links" },
+    { "type": "text", "id": "quick_heading", "label": "Quick links heading", "default": "Quick Links" },
+    { "type": "header", "content": "Contact" },
+    { "type": "text", "id": "contact_heading", "label": "Contact heading", "default": "Contact Us" },
     { "type": "textarea", "id": "address", "label": "Address" },
-    { "type": "text", "id": "phone", "label": "Phone" },
     { "type": "text", "id": "email", "label": "Email" },
-    { "type": "text", "id": "hours", "label": "Hours" },
+    { "type": "text", "id": "phone", "label": "Phone" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp number", "info": "With country code, e.g. +923001234567" },
+    { "type": "text", "id": "hours", "label": "Opening hours" },
+    { "type": "header", "content": "Bottom bar" },
+    { "type": "text", "id": "copyright_name", "label": "Copyright name", "default": "FurrWell Pets Mart & Vets Clinic" },
     { "type": "header", "content": "Social links" },
     { "type": "url", "id": "instagram_url", "label": "Instagram" },
     { "type": "url", "id": "facebook_url", "label": "Facebook" },
@@ -57,19 +200,12 @@
   "blocks": [
     {
       "type": "link_column",
-      "name": "Link column",
+      "name": "Extra link column",
       "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "Shop" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "More" },
         { "type": "link_list", "id": "menu", "label": "Menu" }
       ]
     }
-  ],
-  "default": {
-    "blocks": [
-      { "type": "link_column", "settings": { "heading": "Shop" } },
-      { "type": "link_column", "settings": { "heading": "Vet Services" } },
-      { "type": "link_column", "settings": { "heading": "Company" } }
-    ]
-  }
+  ]
 }
 {% endschema %}

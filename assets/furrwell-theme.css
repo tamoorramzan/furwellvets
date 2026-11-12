@@ -283,15 +283,4 @@
 .fw-newsletter-note.error { color: #b23a3a; }
 
 /* ---------- Footer ---------- */
-.fw-footer { background: #17181c; padding: 56px 0 28px; color: #b9bac0; }
-.fw-footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.1); }
-@media (max-width: 900px) { .fw-footer-top { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .fw-footer-top { grid-template-columns: 1fr; } }
-.fw-footer-brand { display: flex; flex-direction: column; gap: 12px; }
-.fw-footer-brand .fw-brand-word { font-size: 19px; font-weight: 700; color: #fff; }
-.fw-footer-col { display: flex; flex-direction: column; gap: 9px; }
-.fw-footer-col .fw-footer-heading { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-.fw-footer-col a { font-size: 13px; color: #b9bac0; }
-.fw-footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; flex-wrap: wrap; gap: 12px; }
-.fw-footer-social { display: flex; gap: 16px; }
-.fw-footer-social a { color: #b9bac0; }
+/* Footer styles live in sections/furrwell-footer.liquid */
