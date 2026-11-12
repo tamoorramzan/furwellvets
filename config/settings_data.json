@@ -5340,6 +5340,7 @@
           },
           "cs3": {
             "type": "category",
+            "disabled": true,
             "settings": {
               "collection": "cat-vet-food",
               "url": "",
