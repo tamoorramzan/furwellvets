@@ -5715,6 +5715,13 @@
       "furrwell-footer": {
         "type": "furrwell-footer",
         "blocks": {
+          "link_column_WcJcGz": {
+            "type": "link_column",
+            "settings": {
+              "heading": "CAT",
+              "menu": "cat"
+            }
+          },
           "fc1": {
             "type": "link_column",
             "settings": {
@@ -5731,6 +5738,7 @@
           }
         },
         "block_order": [
+          "link_column_WcJcGz",
           "fc1",
           "fc2"
         ],
