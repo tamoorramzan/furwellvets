@@ -5320,6 +5320,15 @@
       "furrwell-category-slider": {
         "type": "furrwell-category-slider",
         "blocks": {
+          "category_WNwwHG": {
+            "type": "category",
+            "settings": {
+              "collection": "cat-litter",
+              "url": "shopify://collections/cat-litter",
+              "label": "",
+              "fallback_color": "#e4ecf5"
+            }
+          },
           "category_KJnXU3": {
             "type": "category",
             "settings": {
@@ -5394,6 +5403,7 @@
           }
         },
         "block_order": [
+          "category_WNwwHG",
           "category_KJnXU3",
           "category_YEcBAT",
           "cs1",
