@@ -5387,7 +5387,7 @@
             "type": "category",
             "settings": {
               "collection": "accessories",
-              "url": "",
+              "url": "shopify://collections/accessories",
               "label": "",
               "fallback_color": "#dcefe7"
             }
