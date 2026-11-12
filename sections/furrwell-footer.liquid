@@ -90,7 +90,7 @@
     <div class="fw-wrap fw-footer-bottom">
       <span class="fw-footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | default: brand }}. All rights reserved.</span>
       <div class="fw-footer-legal">
-        {%- if shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>{%- endif -%}
+        {%- if pages['privacy-policy'] != empty -%}<a href="{{ pages['privacy-policy'].url }}">Privacy Policy</a>{%- elsif shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>{%- endif -%}
         {%- if shop.refund_policy -%}<a href="{{ shop.refund_policy.url }}">Refund Policy</a>{%- endif -%}
         {%- if shop.shipping_policy -%}<a href="{{ shop.shipping_policy.url }}">Shipping Policy</a>{%- endif -%}
         {%- if shop.terms_of_service -%}<a href="{{ shop.terms_of_service.url }}">Terms of Service</a>{%- endif -%}
