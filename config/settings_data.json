@@ -5409,6 +5409,18 @@
       },
       "furrwell-brands": {
         "type": "furrwell-brands",
+        "blocks": {
+          "brand_tfqVqc": {
+            "type": "brand",
+            "settings": {
+              "name": "Royal canin",
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "brand_tfqVqc"
+        ],
         "settings": {
           "heading": "Brands We Carry"
         }
@@ -5461,11 +5473,11 @@
       "furrwell-team": {
         "type": "furrwell-team",
         "blocks": {
-          "vet_YA9d7c": {
+          "vet_xzHVr7": {
             "type": "vet",
             "settings": {
-              "name": "Dr Rehal",
-              "role": "Veterinarian, DVM"
+              "name": "Dr Sohail Idrees",
+              "role": "Veterinarian, DVM, Mphil, MRCVS (UK)"
             }
           },
           "vet_yJ9Qyk": {
@@ -5475,18 +5487,18 @@
               "role": "Veterinarian, DVM"
             }
           },
-          "vet_xzHVr7": {
+          "vet_YA9d7c": {
             "type": "vet",
             "settings": {
-              "name": "Dr Sohail Idrees",
-              "role": "Veterinarian, DVM, Mphil, MRCVS (UK)"
+              "name": "Dr Rehal",
+              "role": "Veterinarian, DVM"
             }
           }
         },
         "block_order": [
-          "vet_YA9d7c",
+          "vet_xzHVr7",
           "vet_yJ9Qyk",
-          "vet_xzHVr7"
+          "vet_YA9d7c"
         ],
         "settings": {
           "eyebrow": "Our Team",
