@@ -5369,7 +5369,7 @@
             "type": "category",
             "settings": {
               "collection": "birds-food",
-              "url": "",
+              "url": "shopify://collections/birds-food",
               "label": "",
               "fallback_color": "#e4ecf5"
             }
