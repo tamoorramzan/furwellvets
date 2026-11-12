@@ -212,7 +212,10 @@
   var saved = null; try { saved = sessionStorage.getItem('fwApptType'); } catch (err) {}
   setType(saved === 'physical' ? 'physical' : 'online');
   // Reopen after Shopify reloads the page following a submit (success or errors).
-  if (root.querySelector('[data-fw-appt-success]') || root.querySelector('[data-fw-appt-has-errors]')) {
+  var apptForm = root.querySelector('form');
+  if (apptForm) apptForm.addEventListener('submit', function () { try { sessionStorage.setItem('fwApptSubmitted', '1'); } catch (err) {} });
+  var apptSent = false; try { apptSent = sessionStorage.getItem('fwApptSubmitted') === '1'; sessionStorage.removeItem('fwApptSubmitted'); } catch (err) {}
+  if (apptSent && (root.querySelector('[data-fw-appt-success]') || root.querySelector('[data-fw-appt-has-errors]'))) {
     open('form');
   } else if (location.hash === '#book-appointment') {
     open('choose');

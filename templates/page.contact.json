@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "contact": {
+      "type": "furrwell-contact-page",
+      "settings": {}
+    }
+  },
+  "order": ["contact"]
+}

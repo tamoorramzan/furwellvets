@@ -1,0 +1,163 @@
+<!-- /sections/furrwell-contact-page.liquid -->
+{%- liquid
+  assign wa_number = section.settings.whatsapp | remove: '+' | remove: ' ' | remove: '-'
+  assign tel_number = section.settings.phone | remove: ' ' | remove: '-'
+  assign map_q = section.settings.address | url_encode | replace: '+', '%20'
+-%}
+<div class="fw-scope">
+  <section class="fw-contact">
+    <div class="fw-wrap">
+      <div class="fw-contact-head">
+        {% if section.settings.eyebrow != blank %}<span class="fw-eyebrow" style="color:var(--fw-teal);">{{ section.settings.eyebrow }}</span>{% endif %}
+        <h1>{{ section.settings.heading }}</h1>
+        {% if section.settings.text != blank %}<p>{{ section.settings.text }}</p>{% endif %}
+      </div>
+
+      <div class="fw-contact-cards">
+        {% if section.settings.address != blank %}
+        <a class="fw-contact-card" href="https://www.google.com/maps/search/?api=1&query={{ map_q }}" target="_blank" rel="noopener">
+          <span class="fw-cc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <span class="fw-cc-label">Visit our clinic</span>
+          <span class="fw-cc-value">{{ section.settings.address }}</span>
+          <span class="fw-cc-action">Get directions &rarr;</span>
+        </a>
+        {% endif %}
+        {% if wa_number != blank %}
+        <a class="fw-contact-card" href="https://wa.me/{{ wa_number }}" target="_blank" rel="noopener">
+          <span class="fw-cc-icon fw-cc-icon--wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm4.52 11.97c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></span>
+          <span class="fw-cc-label">WhatsApp</span>
+          <span class="fw-cc-value">{{ section.settings.phone | default: section.settings.whatsapp }}</span>
+          <span class="fw-cc-action">Chat with us &rarr;</span>
+        </a>
+        {% endif %}
+        {% if section.settings.email != blank %}
+        <a class="fw-contact-card" href="mailto:{{ section.settings.email }}">
+          <span class="fw-cc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="fw-cc-label">Email</span>
+          <span class="fw-cc-value">{{ section.settings.email }}</span>
+          <span class="fw-cc-action">Send an email &rarr;</span>
+        </a>
+        {% endif %}
+        {% if tel_number != blank %}
+        <a class="fw-contact-card" href="tel:{{ tel_number }}">
+          <span class="fw-cc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+          <span class="fw-cc-label">Call us</span>
+          <span class="fw-cc-value">{{ section.settings.phone }}</span>
+          <span class="fw-cc-action">Call now &rarr;</span>
+        </a>
+        {% endif %}
+      </div>
+
+      <div class="fw-contact-main">
+        <div class="fw-contact-form-wrap">
+          <h2>{{ section.settings.form_heading }}</h2>
+          {% if section.settings.form_text != blank %}<p class="fw-contact-sub">{{ section.settings.form_text }}</p>{% endif %}
+          {%- form 'contact', id: 'fw-contact-form', class: 'fw-contact-form' -%}
+            {%- if form.posted_successfully? -%}
+              <div class="fw-contact-ok" data-fw-contact-msg hidden>Thank you! Your message has been sent. We'll get back to you shortly.</div>
+            {%- endif -%}
+            {%- if form.errors -%}
+              <div class="fw-contact-err" data-fw-contact-msg hidden>{{ form.errors | default_errors }}</div>
+            {%- endif -%}
+            <input type="hidden" name="contact[Source]" value="Contact page">
+            <div class="fw-cf-grid">
+              <label>Your name *<input type="text" name="contact[name]" required autocomplete="name"></label>
+              <label>Email *<input type="email" name="contact[email]" required autocomplete="email"></label>
+              <label>Phone / WhatsApp<input type="tel" name="contact[phone]" autocomplete="tel" placeholder="+92 3XX XXXXXXX"></label>
+              <label>Subject
+                <select name="contact[Subject]">
+                  <option>General question</option>
+                  <option>Order or delivery</option>
+                  <option>Vet appointment</option>
+                  <option>Product advice</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="fw-cf-full">Message *<textarea name="contact[body]" rows="5" required></textarea></label>
+            </div>
+            <button type="submit" class="fw-cf-submit">Send message</button>
+          {%- endform -%}
+        </div>
+        {% if section.settings.show_map and section.settings.address != blank %}
+        <div class="fw-contact-map">
+          <iframe title="Map to {{ section.settings.address | escape }}" src="https://maps.google.com/maps?q={{ map_q }}&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          {% if section.settings.hours != blank %}
+          <div class="fw-contact-hours"><strong>Opening hours</strong><span>{{ section.settings.hours }}</span></div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var f = document.getElementById('fw-contact-form'); if (!f) return;
+  f.addEventListener('submit', function () { try { sessionStorage.setItem('fwContactSubmitted', '1'); } catch (e) {} });
+  var sent = false; try { sent = sessionStorage.getItem('fwContactSubmitted') === '1'; sessionStorage.removeItem('fwContactSubmitted'); } catch (e) {}
+  if (sent) f.querySelectorAll('[data-fw-contact-msg]').forEach(function (m) { m.hidden = false; m.scrollIntoView({ block: 'center' }); });
+})();
+</script>
+
+<style>
+  .fw-contact-ok[hidden], .fw-contact-err[hidden] { display: none; }
+  .fw-contact { padding: 56px 0 72px; }
+  .fw-contact-head { text-align: center; max-width: 660px; margin: 0 auto 36px; }
+  .fw-contact-head h1 { font-family: 'Newsreader', Georgia, serif; font-size: 40px; color: var(--fw-navy); margin: 10px 0 12px; line-height: 1.15; }
+  .fw-contact-head p { font-size: 15.5px; line-height: 1.65; color: #5d6476; margin: 0; }
+  .fw-contact-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-bottom: 40px; }
+  .fw-scope .fw-contact-card { background: #fff; border: 1px solid #ebe7dc; border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 6px; color: #22242c; transition: transform .2s, box-shadow .2s, border-color .2s; }
+  .fw-scope .fw-contact-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(31,45,74,.09); border-color: var(--fw-teal); }
+  .fw-cc-icon { width: 46px; height: 46px; border-radius: 14px; background: #e2f0ee; color: var(--fw-navy); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+  .fw-cc-icon--wa { background: #dcf5e4; color: #128c4a; }
+  .fw-cc-label { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: #7a7f8c; font-weight: 600; }
+  .fw-cc-value { font-size: 15.5px; font-weight: 600; color: #22242c; line-height: 1.45; word-break: break-word; }
+  .fw-cc-action { font-size: 13.5px; font-weight: 700; color: var(--fw-teal); margin-top: auto; padding-top: 8px; }
+  .fw-contact-main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: stretch; }
+  .fw-contact-form-wrap { background: #fff; border: 1px solid #ebe7dc; border-radius: 20px; padding: 32px; }
+  .fw-contact-form-wrap h2 { font-family: 'Newsreader', Georgia, serif; font-size: 28px; color: var(--fw-navy); margin: 0 0 6px; }
+  .fw-contact-sub { color: #5d6476; font-size: 14.5px; margin: 0 0 20px; }
+  .fw-cf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+  .fw-cf-grid label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #22242c; }
+  .fw-cf-full { grid-column: 1 / -1; }
+  .fw-cf-grid input, .fw-cf-grid select, .fw-cf-grid textarea { font: inherit; font-weight: 400; font-size: 14px; padding: 12px; border: 1px solid #d9d5c9; border-radius: 10px; background: #fdfbf6; color: #22242c; width: 100%; box-sizing: border-box; }
+  .fw-cf-grid input:focus, .fw-cf-grid select:focus, .fw-cf-grid textarea:focus { outline: none; border-color: var(--fw-teal); box-shadow: 0 0 0 3px rgba(76,156,151,.15); background: #fff; }
+  .fw-cf-submit { margin-top: 20px; background: var(--fw-navy); color: #fff; border: 0; border-radius: 999px; padding: 14px 30px; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+  .fw-cf-submit:hover { background: #1f3550; }
+  .fw-contact-ok { background: #e2f0ee; color: #1d5c57; border-radius: 10px; padding: 12px 14px; font-size: 14px; margin-bottom: 16px; }
+  .fw-contact-err { background: #fcebeb; color: #791f1f; border-radius: 10px; padding: 12px 14px; font-size: 14px; margin-bottom: 16px; }
+  .fw-contact-map { position: relative; border-radius: 20px; overflow: hidden; min-height: 420px; border: 1px solid #ebe7dc; background: #eef1f0; }
+  .fw-contact-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .fw-contact-hours { position: absolute; left: 16px; bottom: 16px; background: #fff; border-radius: 12px; padding: 10px 14px; font-size: 13.5px; box-shadow: 0 6px 18px rgba(0,0,0,.12); display: flex; flex-direction: column; gap: 2px; }
+  @media (max-width: 1100px) { .fw-contact-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 860px) { .fw-contact-main { grid-template-columns: 1fr; } .fw-contact-map { min-height: 320px; } }
+  @media (max-width: 560px) {
+    .fw-contact-head h1 { font-size: 32px; }
+    .fw-contact-cards { grid-template-columns: 1fr; }
+    .fw-contact-form-wrap { padding: 22px 18px; }
+    .fw-cf-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FurrWell Contact Page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "We're here to help" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact Us" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Questions about an order, a product or your pet's health? Reach us on WhatsApp, email or visit our clinic in WAPDA Town, Lahore." },
+    { "type": "header", "content": "Contact details" },
+    { "type": "textarea", "id": "address", "label": "Address", "default": "Plot 126, Block D2, WAPDA Town, Lahore" },
+    { "type": "text", "id": "email", "label": "Email", "default": "Furrwellvets@gmail.com" },
+    { "type": "text", "id": "phone", "label": "Phone (shown)", "default": "+92 326 8828918" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp number", "info": "With country code, e.g. +923001234567", "default": "+923268828918" },
+    { "type": "text", "id": "hours", "label": "Opening hours", "info": "Shown on the map, e.g. Mon–Sat, 10am–9pm" },
+    { "type": "checkbox", "id": "show_map", "label": "Show map", "default": true },
+    { "type": "header", "content": "Form" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Send us a message" },
+    { "type": "text", "id": "form_text", "label": "Form text", "default": "We usually reply within one working day." }
+  ],
+  "presets": [ { "name": "FurrWell Contact Page" } ]
+}
+{% endschema %}
