@@ -5383,6 +5383,15 @@
               "fallback_color": "#e4ecf5"
             }
           },
+          "category_G9xPEt": {
+            "type": "category",
+            "settings": {
+              "collection": "medicine",
+              "url": "shopify://collections/medicine",
+              "label": "",
+              "fallback_color": "#e4ecf5"
+            }
+          },
           "category_TEAMHt": {
             "type": "category",
             "settings": {
@@ -5419,6 +5428,7 @@
           "cs2",
           "cs3",
           "category_WNwwHG",
+          "category_G9xPEt",
           "category_TEAMHt",
           "cs4",
           "cs5"
