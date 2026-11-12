@@ -5718,8 +5718,8 @@
           "fc1": {
             "type": "link_column",
             "settings": {
-              "heading": "Shop",
-              "menu": "main-menu-1"
+              "heading": "DOG",
+              "menu": "dog"
             }
           },
           "fc2": {
