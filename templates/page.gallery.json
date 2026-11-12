@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "gallery": {
+      "type": "furrwell-gallery",
+      "blocks": {
+        "photo-1": { "type": "photo", "settings": {} },
+        "photo-2": { "type": "photo", "settings": {} },
+        "photo-3": { "type": "photo", "settings": {} }
+      },
+      "block_order": ["photo-1", "photo-2", "photo-3"],
+      "settings": {}
+    }
+  },
+  "order": ["gallery"]
+}

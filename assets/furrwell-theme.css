@@ -226,6 +226,10 @@
 .fw-scope .fw-wa-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; background: #0f3d24; color: #fff; border: 1px solid rgba(255,255,255,.35); font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
 .fw-wa-btn svg { color: #4ade80; }
 .fw-scope .fw-wa-btn:hover { background: #0a2e1a; color: #fff; border-color: #4ade80; }
+.fw-cred-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.fw-cred-buttons .fw-wa-btn { margin-top: 0; }
+.fw-scope .fw-gallery-btn { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.6); font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; text-decoration: none; transition: background .2s ease, color .2s ease; }
+.fw-scope .fw-gallery-btn:hover { background: #fff; color: var(--fw-navy); }
 @media (max-width: 600px) { .fw-stats-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Meet the vets ---------- */
