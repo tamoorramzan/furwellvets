@@ -5352,7 +5352,7 @@
             "settings": {
               "collection": "cat-dry-food",
               "url": "shopify://collections/cat-dry-food",
-              "label": "Cat Food",
+              "label": "Cat Dry Food",
               "fallback_color": "#f5ecd7"
             }
           },
