@@ -5714,24 +5714,22 @@
       },
       "furrwell-footer": {
         "type": "furrwell-footer",
-        "blocks": {},
-        "block_order": [],
         "settings": {
           "brand_name": "FurrWell Pets Mart",
-          "address": "Plot 126, Block D2, WAPDA Town, Lahore",
-          "phone": "+92 326 8828918",
-          "email": "Furrwellvets@gmail.com",
-          "hours": "",
-          "instagram_url": "",
-          "facebook_url": "",
-          "tiktok_url": "",
           "tagline": "& Vets Clinic",
           "about": "Pet food, care essentials and veterinary care in one place. Shop online or visit our clinic in WAPDA Town, Lahore.",
-          "menu": "main-menu-1",
+          "menu": "",
           "quick_heading": "Quick Links",
           "contact_heading": "Contact Us",
+          "address": "Plot 126, Block D2, WAPDA Town, Lahore",
+          "email": "Furrwellvets@gmail.com",
+          "phone": "+92 326 8828918",
           "whatsapp": "+923268828918",
-          "copyright_name": "FurrWell Pets Mart & Vets Clinic"
+          "hours": "",
+          "copyright_name": "FurrWell Pets Mart & Vets Clinic",
+          "instagram_url": "",
+          "facebook_url": "",
+          "tiktok_url": ""
         }
       },
       "furrwell-appointment-popup": {
