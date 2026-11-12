@@ -5640,8 +5640,8 @@
         "type": "furrwell-pet-care-tips",
         "settings": {
           "heading": "Pet Care Tips",
-          "blog": "",
-          "limit": 3
+          "blog": "pet-care-tips",
+          "limit": 6
         }
       },
       "furrwell-newsletter": {
