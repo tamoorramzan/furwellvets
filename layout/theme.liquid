@@ -138,7 +138,7 @@ Add the page template as a class for easy page or template specific styling.
 
           {% include 'search' %}
           {% include 'minicart' %}
-          {% include 'menu_mobile' %}
+          {%- comment -%} Old template mobile bar removed; FurrWell header handles mobile {%- endcomment -%}
           {% include 'popup-login' %}
           {{ content_for_layout }}
 
