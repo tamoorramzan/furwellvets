@@ -5410,6 +5410,13 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_LqNW3g": {
+            "type": "brand",
+            "settings": {
+              "name": "Bonnie",
+              "url": ""
+            }
+          },
           "brand_4WwtiA": {
             "type": "brand",
             "settings": {
@@ -5454,6 +5461,7 @@
           }
         },
         "block_order": [
+          "brand_LqNW3g",
           "brand_4WwtiA",
           "brand_yJb4pn",
           "brand_xFeKNB",
