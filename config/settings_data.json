@@ -5410,6 +5410,13 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_4ddNXH": {
+            "type": "brand",
+            "settings": {
+              "name": "Petso",
+              "url": ""
+            }
+          },
           "brand_LqNW3g": {
             "type": "brand",
             "settings": {
@@ -5461,6 +5468,7 @@
           }
         },
         "block_order": [
+          "brand_4ddNXH",
           "brand_LqNW3g",
           "brand_4WwtiA",
           "brand_yJb4pn",
