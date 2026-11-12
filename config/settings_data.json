@@ -5410,6 +5410,13 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_xFeKNB": {
+            "type": "brand",
+            "settings": {
+              "name": "Pawfect",
+              "url": ""
+            }
+          },
           "brand_njAbBy": {
             "type": "brand",
             "settings": {
@@ -5433,6 +5440,7 @@
           }
         },
         "block_order": [
+          "brand_xFeKNB",
           "brand_njAbBy",
           "brand_DQ6cfR",
           "brand_tfqVqc"
