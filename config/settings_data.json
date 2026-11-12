@@ -5410,6 +5410,13 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_DQ6cfR": {
+            "type": "brand",
+            "settings": {
+              "name": "Nourvet",
+              "url": ""
+            }
+          },
           "brand_tfqVqc": {
             "type": "brand",
             "settings": {
@@ -5419,6 +5426,7 @@
           }
         },
         "block_order": [
+          "brand_DQ6cfR",
           "brand_tfqVqc"
         ],
         "settings": {
