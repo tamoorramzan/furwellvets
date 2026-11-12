@@ -5276,8 +5276,8 @@
           "c2": {
             "type": "tile",
             "settings": {
-              "collection": "cat-litter",
-              "url": "",
+              "collection": "cat",
+              "url": "shopify://collections/cat",
               "label": "Cat",
               "icon_style": "cat",
               "subtitle": "",
