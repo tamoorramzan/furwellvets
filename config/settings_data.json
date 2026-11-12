@@ -5320,6 +5320,15 @@
       "furrwell-category-slider": {
         "type": "furrwell-category-slider",
         "blocks": {
+          "category_YEcBAT": {
+            "type": "category",
+            "settings": {
+              "collection": "dog-wet-food",
+              "url": "shopify://collections/dog-wet-food",
+              "label": "",
+              "fallback_color": "#e4ecf5"
+            }
+          },
           "category_KJnXU3": {
             "type": "category",
             "settings": {
@@ -5386,6 +5395,7 @@
           }
         },
         "block_order": [
+          "category_YEcBAT",
           "category_KJnXU3",
           "cs1",
           "cs2",
