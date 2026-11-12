@@ -5320,15 +5320,6 @@
       "furrwell-category-slider": {
         "type": "furrwell-category-slider",
         "blocks": {
-          "category_bVbKCG": {
-            "type": "category",
-            "settings": {
-              "collection": "cat-treats",
-              "url": "shopify://collections/cat-treats",
-              "label": "",
-              "fallback_color": "#e4ecf5"
-            }
-          },
           "category_KJnXU3": {
             "type": "category",
             "settings": {
@@ -5372,6 +5363,15 @@
               "url": "shopify://collections/cat-wet-food",
               "label": "Cat Wet Food",
               "fallback_color": "#e2f0ee"
+            }
+          },
+          "category_bVbKCG": {
+            "type": "category",
+            "settings": {
+              "collection": "cat-treats",
+              "url": "shopify://collections/cat-treats",
+              "label": "",
+              "fallback_color": "#e4ecf5"
             }
           },
           "category_WNwwHG": {
@@ -5421,12 +5421,12 @@
           }
         },
         "block_order": [
-          "category_bVbKCG",
           "category_KJnXU3",
           "category_YEcBAT",
           "cs1",
           "cs2",
           "cs3",
+          "category_bVbKCG",
           "category_WNwwHG",
           "category_G9xPEt",
           "category_TEAMHt",
