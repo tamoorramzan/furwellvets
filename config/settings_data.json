@@ -5410,6 +5410,13 @@
       "furrwell-brands": {
         "type": "furrwell-brands",
         "blocks": {
+          "brand_njAbBy": {
+            "type": "brand",
+            "settings": {
+              "name": "Diamond Natural",
+              "url": ""
+            }
+          },
           "brand_DQ6cfR": {
             "type": "brand",
             "settings": {
@@ -5426,6 +5433,7 @@
           }
         },
         "block_order": [
+          "brand_njAbBy",
           "brand_DQ6cfR",
           "brand_tfqVqc"
         ],
