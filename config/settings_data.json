@@ -3789,7 +3789,6 @@
         "settings": {
           "select_style_bread": "style_3",
           "ena_bg_img": false,
-          "bg_breadcrumb": "",
           "bg_color_breadcrumb": "#f2f2f2",
           "color_breadcrumb": "#000000",
           "collection_layout": "infinity_scroll",
@@ -3799,7 +3798,6 @@
           "sidebar_layout": "sidebar_right",
           "ena_sticky_sidebar": true,
           "ena_banner_mordern": true,
-          "bannerfull_img": "shopify://shop_images/Untitled-1_bc0bd502-cc5c-4609-a61e-fe5fe7da732b.jpg",
           "big_title": "A NEW COLLECTION",
           "mini_title": "SALE UP TO 30%",
           "btn_title": "Shop Now",
