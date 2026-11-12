@@ -5265,8 +5265,8 @@
           "c1": {
             "type": "tile",
             "settings": {
-              "collection": "dog",
-              "url": "shopify://collections/dog",
+              "collection": "dog-1",
+              "url": "shopify://collections/dog-1",
               "label": "Dog",
               "icon_style": "dog",
               "subtitle": "",
