@@ -5320,15 +5320,6 @@
       "furrwell-category-slider": {
         "type": "furrwell-category-slider",
         "blocks": {
-          "category_YEcBAT": {
-            "type": "category",
-            "settings": {
-              "collection": "dog-wet-food",
-              "url": "shopify://collections/dog-wet-food",
-              "label": "",
-              "fallback_color": "#e4ecf5"
-            }
-          },
           "category_KJnXU3": {
             "type": "category",
             "settings": {
@@ -5338,11 +5329,20 @@
               "fallback_color": "#e4ecf5"
             }
           },
+          "category_YEcBAT": {
+            "type": "category",
+            "settings": {
+              "collection": "dog-wet-food",
+              "url": "shopify://collections/dog-wet-food",
+              "label": "",
+              "fallback_color": "#e4ecf5"
+            }
+          },
           "cs1": {
             "type": "category",
             "settings": {
-              "collection": "dog",
-              "url": "shopify://collections/dog",
+              "collection": "dog-treats",
+              "url": "shopify://collections/dog-treats",
               "label": "Dog Food",
               "fallback_color": "#e4ecf5"
             }
@@ -5350,8 +5350,8 @@
           "cs2": {
             "type": "category",
             "settings": {
-              "collection": "cat-food",
-              "url": "shopify://collections/cat-food",
+              "collection": "cat-dry-food",
+              "url": "shopify://collections/cat-dry-food",
               "label": "Cat Food",
               "fallback_color": "#f5ecd7"
             }
@@ -5394,8 +5394,8 @@
           }
         },
         "block_order": [
-          "category_YEcBAT",
           "category_KJnXU3",
+          "category_YEcBAT",
           "cs1",
           "cs2",
           "cs3",
