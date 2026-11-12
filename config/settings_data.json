@@ -5358,10 +5358,9 @@
           },
           "cs3": {
             "type": "category",
-            "disabled": true,
             "settings": {
-              "collection": "cat-vet-food",
-              "url": "",
+              "collection": "cat-wet-food",
+              "url": "shopify://collections/cat-wet-food",
               "label": "Cat Wet Food",
               "fallback_color": "#e2f0ee"
             }
