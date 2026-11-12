@@ -5378,7 +5378,7 @@
             "type": "category",
             "settings": {
               "collection": "fish-food",
-              "url": "",
+              "url": "shopify://collections/fish-food",
               "label": "",
               "fallback_color": "#dcecef"
             }
