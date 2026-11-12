@@ -5265,8 +5265,8 @@
           "tile_Ga8hRj": {
             "type": "tile",
             "settings": {
-              "collection": "",
-              "url": "",
+              "collection": "birds-food",
+              "url": "shopify://collections/birds-food",
               "label": "",
               "icon_style": "paw",
               "subtitle": "",
