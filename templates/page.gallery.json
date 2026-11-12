@@ -1,15 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "gallery": {
       "type": "furrwell-gallery",
       "blocks": {
-        "photo-1": { "type": "photo", "settings": {} },
-        "photo-2": { "type": "photo", "settings": {} },
-        "photo-3": { "type": "photo", "settings": {} }
+        "photo_eKmcYG": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo_NwezGU": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo_AqR4J9": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo_iNDyXK": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo_MbXpit": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo_zaH6Tw": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo-1": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo-2": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        },
+        "photo-3": {
+          "type": "photo",
+          "settings": {
+            "caption": "",
+            "wide": false
+          }
+        }
       },
-      "block_order": ["photo-1", "photo-2", "photo-3"],
-      "settings": {}
+      "block_order": [
+        "photo_eKmcYG",
+        "photo_NwezGU",
+        "photo_AqR4J9",
+        "photo_iNDyXK",
+        "photo_MbXpit",
+        "photo_zaH6Tw",
+        "photo-1",
+        "photo-2",
+        "photo-3"
+      ],
+      "settings": {
+        "eyebrow": "Inside our clinic",
+        "heading": "Clinic Gallery",
+        "text": "Take a look inside FurrWell Vets Clinic in WAPDA Town, Lahore: our consultation rooms, our team and some of the pets we care for.",
+        "columns": "3",
+        "button_label": "Book an Appointment",
+        "button_url": ""
+      }
     }
   },
-  "order": ["gallery"]
+  "order": [
+    "gallery"
+  ]
 }
