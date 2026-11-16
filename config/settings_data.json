@@ -539,7 +539,7 @@
     "banner_sidebar": "shopify://shop_images/sidebar_banner.jpg",
     "show_servicebox": true,
     "title_box_1": "Why Choose Us ?",
-    "content_box_1": "Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused",
+    "content_box_1": "A trusted Pakistani pet store. 100% original products from genuine suppliers, careful packing, and friendly support on call and WhatsApp. Fast, reliable delivery across Pakistan, so your pets always get the best.",
     "title_box_2": "Returns",
     "content_box_2": "Return this product within 100 days if you change your mind. Get a refund/replacement & free return shipping if it arrives damaged or not as described",
     "title_box_3": "Shipping",
@@ -3812,7 +3812,6 @@
         "settings": {
           "spd_style": "pd_extended",
           "style_page": "bottom",
-          "bg_prod_extended": "",
           "style_sidebar": "left",
           "show_rating": true,
           "show_sdes": true,
