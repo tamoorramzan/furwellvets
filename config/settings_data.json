@@ -5168,7 +5168,7 @@
               "heading": "Everything your pet needs, backed by real vets",
               "text": "Food, care essentials and wellness products selected with our veterinary team.",
               "button_label": "Shop Best Sellers",
-              "button_url": "/collections/all",
+              "button_url": "shopify://collections",
               "button2_label": "Book a Vet Visit",
               "button2_url": "/pages/contact#book-appointment"
             }
