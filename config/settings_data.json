@@ -5289,7 +5289,7 @@
               "collection": "birds-food",
               "url": "shopify://collections/birds-food",
               "label": "",
-              "icon_style": "paw",
+              "icon_style": "bird",
               "subtitle": "",
               "bg_color": "#eef1e8"
             }
@@ -5313,7 +5313,8 @@
           "c3"
         ],
         "settings": {
-          "heading": "Shop by Pet"
+          "heading": "Shop by Pet",
+          "animated_icons": true
         }
       },
       "furrwell-category-slider": {

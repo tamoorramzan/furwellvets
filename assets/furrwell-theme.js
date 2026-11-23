@@ -91,6 +91,39 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prevBtn) prevBtn.addEventListener('click', function () { index = Math.max(0, index - 1); render(); });
     if (nextBtn) nextBtn.addEventListener('click', function () { index = Math.min(maxIndex(), index + 1); render(); });
     window.addEventListener('resize', render);
+
+    /* Swipe left/right on touch screens */
+    var startX = 0, startY = 0, dragging = false, baseX = 0;
+    wrap.style.touchAction = 'pan-y';
+    wrap.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      baseX = index * cardStep();
+      dragging = true;
+      track.style.transition = 'none';
+    }, { passive: true });
+    wrap.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      var dx = e.touches[0].clientX - startX;
+      var dy = e.touches[0].clientY - startY;
+      if (Math.abs(dy) > Math.abs(dx)) return;
+      var max = maxIndex() * cardStep();
+      var x = Math.min(max + 40, Math.max(-40, baseX - dx));
+      track.style.transform = 'translateX(' + (-x) + 'px)';
+    }, { passive: true });
+    wrap.addEventListener('touchend', function (e) {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      var dx = e.changedTouches[0].clientX - startX;
+      var step = cardStep();
+      if (Math.abs(dx) > 40) {
+        var moved = Math.max(1, Math.round(Math.abs(dx) / step));
+        index = dx < 0 ? Math.min(maxIndex(), index + moved) : Math.max(0, index - moved);
+      }
+      render();
+    });
+
     render();
   });
 

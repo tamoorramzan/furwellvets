@@ -284,3 +284,23 @@
 
 /* ---------- Footer ---------- */
 /* Footer styles live in sections/furrwell-footer.liquid */
+
+
+/* Shop by Pet — animated 3D icons */
+.fw-quick-tile svg.fw-pet-3d { width: 104px; height: 87px; overflow: visible; margin: -6px 0 -4px -6px; }
+@media (max-width: 767px) { .fw-quick-tile svg.fw-pet-3d { width: 92px; height: 77px; } }
+.sbp-a { transform-box: view-box; }
+@keyframes sbp-bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+@keyframes sbp-shad { 0%,100% { transform: scaleX(1); opacity: .18 } 50% { transform: scaleX(.7); opacity: .08 } }
+@keyframes sbp-flap { 0%,100% { transform: rotate(8deg) } 50% { transform: rotate(-62deg) } }
+@keyframes sbp-flap2 { 0%,100% { transform: rotate(4deg) } 50% { transform: rotate(-50deg) } }
+@keyframes sbp-tilt { 0%,100% { transform: rotate(-7deg) } 50% { transform: rotate(7deg) } }
+@keyframes sbp-ear { 0%,100% { transform: rotate(-10deg) } 50% { transform: rotate(12deg) } }
+@keyframes sbp-bounce { 0%,100% { transform: translateY(0) } 45% { transform: translateY(-26px) } }
+@keyframes sbp-swipe { 0%,60%,100% { transform: rotate(0) } 30% { transform: rotate(-35deg) } }
+@keyframes sbp-roll { 0%,100% { transform: translateX(0) rotate(0) } 50% { transform: translateX(9px) rotate(120deg) } }
+@keyframes sbp-look { 0%,100% { transform: translateX(0) } 50% { transform: translateX(2px) } }
+@keyframes sbp-swim { 0%,100% { transform: translate(-5px,0) } 50% { transform: translate(5px,-3px) } }
+@keyframes sbp-tail { 0%,100% { transform: rotate(-14deg) } 50% { transform: rotate(14deg) } }
+@keyframes sbp-bub { 0% { transform: translateY(0); opacity: 0 } 20% { opacity: .8 } 100% { transform: translateY(-40px); opacity: 0 } }
+@media (prefers-reduced-motion: reduce) { .sbp-a, .sbp-a * { animation: none !important; } }
