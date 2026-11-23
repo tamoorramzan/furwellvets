@@ -304,3 +304,28 @@
 @keyframes sbp-tail { 0%,100% { transform: rotate(-14deg) } 50% { transform: rotate(14deg) } }
 @keyframes sbp-bub { 0% { transform: translateY(0); opacity: 0 } 20% { opacity: .8 } 100% { transform: translateY(-40px); opacity: 0 } }
 @media (prefers-reduced-motion: reduce) { .sbp-a, .sbp-a * { animation: none !important; } }
+
+/* Mobile header layout: menu + search on top, account/cart below right, larger logo at bottom */
+@media (max-width: 989px) {
+  .fw-header-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "burger search" "actions actions" "logo logo";
+    column-gap: 12px;
+    row-gap: 14px;
+  }
+  .fw-burger { grid-area: burger; padding: 0; }
+  .fw-search { grid-area: search; order: 0; flex-basis: auto; max-width: none; margin: 0; height: 46px; padding-left: 16px; min-width: 0; }
+  .fw-search input { min-width: 0; font-size: 14px; }
+  .fw-header-actions { grid-area: actions; justify-self: end; gap: 24px; }
+  .fw-header-actions a { font-size: 15px; }
+  .fw-logo { grid-area: logo; justify-self: center; margin-top: 4px; gap: 14px; }
+  .fw-logo img, .fw-logo-mark { width: 58px; height: 58px; }
+  .fw-logo-mark svg { width: 34px; height: 30px; }
+  .fw-logo-text .fw-name { font-size: 26px; }
+  .fw-logo-text .fw-tag { font-size: 13px; margin-top: 2px; }
+}
+@media (max-width: 360px) {
+  .fw-logo-text .fw-name { font-size: 22px; }
+  .fw-logo img, .fw-logo-mark { width: 50px; height: 50px; }
+}
