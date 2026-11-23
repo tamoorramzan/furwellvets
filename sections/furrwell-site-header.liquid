@@ -29,11 +29,7 @@
         <img src="{{ section.settings.logo | img_url: '160x' }}" alt="{{ shop.name }}" width="44" height="44">
         {% else %}
         <span class="fw-logo-mark">
-          <svg width="28" height="25" viewBox="0 0 34 30" fill="none">
-            <path d="M17 27c-6.2-4.4-12.4-8.8-12.4-14.6C4.6 7.7 8 4.4 12 4.4c2.2 0 4.1 1 5 2.6V27Z" fill="var(--fw-navy)"/>
-            <path d="M17 27c6.2-4.4 12.4-8.8 12.4-14.6 0-4.7-3.4-8-7.4-8-2.2 0-4.1 1-5 2.6V27Z" fill="var(--fw-gold)"/>
-            <path d="M17 9v6M14 12h6" stroke="var(--fw-teal)" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
+          <img src="{{ 'fw-logo-heart.jpg' | asset_url }}" alt="" width="400" height="400">
         </span>
         {% endif %}
         <span class="fw-logo-text">
